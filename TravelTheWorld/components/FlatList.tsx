@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, Image, FlatList, TouchableOpacity, Dimensions, StyleSheet } from "react-native";
 import data from "@/Data/PaysVilleDescription.json"; // Import des données
+import { City } from "@/Data/data";
+import { DataService } from "@/Data/data";
+// import function of class DataService
+
+
 
 const { width } = Dimensions.get("window");
 
 const FlatListCities = () => {
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedCity, setSelectedCity] = useState<City | null>(null);
 
   // Extraire les cities depuis le fichier `data.js`
-  const cities = data.countries.flatMap(country => country.cities);
+  const [cities, setCities] = useState<City[]>([]);
+
+  useEffect(() => {
+    const fetchCities = async () => {
+      const result = await DataService.getAllCities();
+      if (result) {
+        setCities(result);
+      }
+    };
+
+    fetchCities();
+  }, []);
 
   return (
     <View style={styles.container}>

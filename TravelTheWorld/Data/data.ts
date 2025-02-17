@@ -1,5 +1,6 @@
-import fs from 'fs';
-import path from 'path';
+import * as FileSystem from 'expo-file-system';
+import { Platform } from 'react-native';
+import jsonData from './PaysVilleDescription.json';
 
 
 
@@ -13,6 +14,7 @@ export interface City {
     id: number;
     name: string;
     description: string;
+    imageUrl: string;
     places: Places;
 }
 
@@ -34,37 +36,43 @@ export interface Place {
 
 
 export class DataService {
-    private dataPath: string;
 
-    constructor(dataPath: string) {
+    static dataPath: string = "PaysVilleDescription.json";
+
+    static setDataPath(dataPath: string): void {
         this.dataPath = dataPath;
     }
 
     
-    public getData(): any {
+    static async getData(): Promise<any> {
         try {
-            const filePath = path.resolve(this.dataPath);
-            const rawData = fs.readFileSync(filePath, 'utf-8');
-            return JSON.parse(rawData);
-        } catch (error) {
-            console.error('Error reading or parsing data:', error);
+            const data = jsonData;
+            return data;
+        }
+        catch (error) {
+            console.error(error);
             return null;
         }
     }
 
-    public getAllCountries(): Country[] | null {
-        const data = this.getData();
-        return data ? (data.countries as Country[]) : null
+    static async getAllCountries(): Promise<Country[] | null> {
+        const data = await this.getData();
+        return data ? data.countries : null;
     }
 
-    public getCountryById(id: number): Country | null {
-        const countries = this.getAllCountries();
-        return countries ? countries.find(country => country.id === id) || null : null;
+    static async getCountryById(countryId: number): Promise<Country | null> {
+        const countries = await this.getAllCountries();
+        return countries ? countries.find(country => country.id === countryId) || null : null;
     }
 
-    public getCityById(countryId: number, cityId: number): City | null {
-        const country = this.getCountryById(countryId);
+    static async getCityById(countryId: number, cityId: number): Promise<City | null> {
+        const country = await this.getCountryById(countryId);
         return country ? country.cities.find(city => city.id === cityId) || null : null;
+    }
+
+    static async getAllCities(): Promise<City[] | null> {
+        const countries = await this.getAllCountries();
+        return countries ? countries.flatMap(country => country.cities) : null;
     }
 }
 
