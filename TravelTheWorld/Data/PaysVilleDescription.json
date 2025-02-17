@@ -1,0 +1,800 @@
+{
+    "countries": [
+        {
+            "id": 1,
+            "name": "France",
+            "cities": [
+                {
+                    "id": 101,
+                    "name": "Paris",
+                    "description": "La ville lumière, célèbre pour la Tour Eiffel, le Louvre et sa gastronomie raffinée.",
+                    "imageUrl": "https://source.unsplash.com/800x600/?paris",
+                    "places": {
+                        "restaurants": [
+                            {
+                                "id": 1001,
+                                "name": "Le Meurice",
+                                "description": "Un restaurant gastronomique étoilé avec une cuisine française raffinée.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?frenchfood",
+                                "rating": 4.8
+                            },
+                            {
+                                "id": 1002,
+                                "name": "L'Ambroisie",
+                                "description": "Un restaurant trois étoiles au Michelin avec des plats d'exception.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?restaurant",
+                                "rating": 4.9
+                            }
+                        ],
+                        "museums": [
+                            {
+                                "id": 1003,
+                                "name": "Musée du Louvre",
+                                "description": "Le plus grand musée du monde abritant la Joconde et la Vénus de Milo.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?louvre",
+                                "rating": 4.9
+                            },
+                            {
+                                "id": 1004,
+                                "name": "Musée d'Orsay",
+                                "description": "Un musée impressionniste avec des œuvres de Monet et Van Gogh.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?orsay",
+                                "rating": 4.7
+                            }
+                        ],
+                        "historical_sites": [
+                            {
+                                "id": 1005,
+                                "name": "Tour Eiffel",
+                                "description": "Monument emblématique offrant une vue panoramique sur Paris.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?eiffeltower",
+                                "rating": 4.8
+                            },
+                            {
+                                "id": 1006,
+                                "name": "Notre-Dame de Paris",
+                                "description": "Cathédrale gothique célèbre pour ses gargouilles et son architecture.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?notredame",
+                                "rating": 4.7
+                            }
+                        ],
+                        "activities": [
+                            {
+                                "id": 1007,
+                                "name": "Croisière sur la Seine",
+                                "description": "Découvrez Paris depuis la Seine en bateau mouche.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?seineriver",
+                                "rating": 4.6
+                            },
+                            {
+                                "id": 1008,
+                                "name": "Montmartre et Sacré-Cœur",
+                                "description": "Balade dans le quartier bohème et vue imprenable depuis la basilique.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?montmartre",
+                                "rating": 4.7
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Italie",
+            "cities": [
+                {
+                    "id": 102,
+                    "name": "Rome",
+                    "description": "La capitale italienne, connue pour le Colisée, la Fontaine de Trevi et la Cité du Vatican.",
+                    "imageUrl": "https://source.unsplash.com/800x600/?rome",
+                    "places": {
+                        "restaurants": [
+                            {
+                                "id": 2001,
+                                "name": "Roscioli",
+                                "description": "Restaurant et épicerie fine réputé pour ses pâtes carbonara.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?italianfood",
+                                "rating": 4.7
+                            },
+                            {
+                                "id": 2002,
+                                "name": "La Pergola",
+                                "description": "Un restaurant trois étoiles Michelin avec une vue imprenable.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?restaurant",
+                                "rating": 4.9
+                            }
+                        ],
+                        "museums": [
+                            {
+                                "id": 2003,
+                                "name": "Les Musées du Vatican",
+                                "description": "Abritent la Chapelle Sixtine et des œuvres de Michel-Ange.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?vatican",
+                                "rating": 4.8
+                            },
+                            {
+                                "id": 2004,
+                                "name": "Musée du Capitole",
+                                "description": "Le plus ancien musée public du monde, riche en antiquités romaines.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?capitolmuseum",
+                                "rating": 4.6
+                            }
+                        ],
+                        "historical_sites": [
+                            {
+                                "id": 2005,
+                                "name": "Colisée",
+                                "description": "L'amphithéâtre emblématique de Rome, vestige de l'Empire romain.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?colosseum",
+                                "rating": 4.9
+                            },
+                            {
+                                "id": 2006,
+                                "name": "Panthéon",
+                                "description": "Un temple antique parfaitement préservé, témoin de l'architecture romaine.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?pantheon",
+                                "rating": 4.8
+                            }
+                        ],
+                        "activities": [
+                            {
+                                "id": 2007,
+                                "name": "Balade dans le Trastevere",
+                                "description": "Quartier pittoresque connu pour ses ruelles colorées et restaurants typiques.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?trastevere",
+                                "rating": 4.7
+                            },
+                            {
+                                "id": 2008,
+                                "name": "Lancer une pièce dans la Fontaine de Trevi",
+                                "description": "Tradition populaire pour s'assurer un retour à Rome.",
+                                "imageUrl": "https://source.unsplash.com/800x600/?trevifountain",
+                                "rating": 4.6
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "countries": [
+                {
+                    "id": 3,
+                    "name": "Japon",
+                    "cities": [
+                        {
+                            "id": 301,
+                            "name": "Tokyo",
+                            "description": "Une métropole futuriste mêlant technologie, traditions et culture pop.",
+                            "imageUrl": "https://source.unsplash.com/800x600/?tokyo",
+                            "places": {
+                                "restaurants": [
+                                    {
+                                        "id": 3001,
+                                        "name": "Sukiyabashi Jiro",
+                                        "description": "Restaurant de sushi légendaire avec 3 étoiles Michelin.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?sushi",
+                                        "rating": 4.9
+                                    },
+                                    {
+                                        "id": 3002,
+                                        "name": "Ichiran Ramen",
+                                        "description": "Un des meilleurs ramens de Tokyo, célèbre pour son bouillon riche.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?ramen",
+                                        "rating": 4.7
+                                    }
+                                ],
+                                "museums": [
+                                    {
+                                        "id": 3003,
+                                        "name": "Musée Ghibli",
+                                        "description": "Un musée magique dédié aux films d'animation de Studio Ghibli.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?ghibli",
+                                        "rating": 4.8
+                                    },
+                                    {
+                                        "id": 3004,
+                                        "name": "Mori Art Museum",
+                                        "description": "Musée d'art contemporain offrant une vue imprenable sur la ville.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?museumtokyo",
+                                        "rating": 4.7
+                                    }
+                                ],
+                                "historical_sites": [
+                                    {
+                                        "id": 3005,
+                                        "name": "Temple Sensō-ji",
+                                        "description": "Le plus ancien temple bouddhiste de Tokyo, situé à Asakusa.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?sensoji",
+                                        "rating": 4.9
+                                    },
+                                    {
+                                        "id": 3006,
+                                        "name": "Palais impérial de Tokyo",
+                                        "description": "Résidence de l'Empereur du Japon entourée de magnifiques jardins.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?imperialpalace",
+                                        "rating": 4.8
+                                    }
+                                ],
+                                "activities": [
+                                    {
+                                        "id": 3007,
+                                        "name": "Visite de Shibuya Crossing",
+                                        "description": "Traversez le plus grand passage piéton du monde.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?shibuya",
+                                        "rating": 4.6
+                                    },
+                                    {
+                                        "id": 3008,
+                                        "name": "Shopping à Akihabara",
+                                        "description": "Le paradis des amateurs de manga et de technologie.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?akihabara",
+                                        "rating": 4.7
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "États-Unis",
+                    "cities": [
+                        {
+                            "id": 401,
+                            "name": "New York",
+                            "description": "La ville qui ne dort jamais, abritant Times Square, Central Park et Broadway.",
+                            "imageUrl": "https://source.unsplash.com/800x600/?newyork",
+                            "places": {
+                                "restaurants": [
+                                    {
+                                        "id": 4001,
+                                        "name": "Eleven Madison Park",
+                                        "description": "Un des meilleurs restaurants du monde, cuisine raffinée et élégante.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?restaurant",
+                                        "rating": 4.9
+                                    },
+                                    {
+                                        "id": 4002,
+                                        "name": "Katz’s Delicatessen",
+                                        "description": "Un célèbre deli connu pour ses sandwichs au pastrami.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?deli",
+                                        "rating": 4.7
+                                    }
+                                ],
+                                "museums": [
+                                    {
+                                        "id": 4003,
+                                        "name": "Metropolitan Museum of Art",
+                                        "description": "Un des musées les plus prestigieux du monde avec des œuvres iconiques.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?metmuseum",
+                                        "rating": 4.9
+                                    },
+                                    {
+                                        "id": 4004,
+                                        "name": "MoMA",
+                                        "description": "Le musée d'art moderne de New York, abritant des chefs-d'œuvre de Picasso et Van Gogh.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?moma",
+                                        "rating": 4.8
+                                    }
+                                ],
+                                "historical_sites": [
+                                    {
+                                        "id": 4005,
+                                        "name": "Statue de la Liberté",
+                                        "description": "Symbole de liberté et d'espoir aux États-Unis.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?libertystatue",
+                                        "rating": 4.8
+                                    },
+                                    {
+                                        "id": 4006,
+                                        "name": "Empire State Building",
+                                        "description": "Un gratte-ciel emblématique avec une vue panoramique sur NYC.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?empirestate",
+                                        "rating": 4.7
+                                    }
+                                ],
+                                "activities": [
+                                    {
+                                        "id": 4007,
+                                        "name": "Balade à Central Park",
+                                        "description": "Découvrez le poumon vert de New York à pied ou à vélo.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?centralpark",
+                                        "rating": 4.9
+                                    },
+                                    {
+                                        "id": 4008,
+                                        "name": "Broadway Show",
+                                        "description": "Assistez à un spectacle inoubliable sur Broadway.",
+                                        "imageUrl": "https://source.unsplash.com/800x600/?broadway",
+                                        "rating": 4.8
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "countries": [
+                        {
+                            "id": 5,
+                            "name": "Espagne",
+                            "cities": [
+                                {
+                                    "id": 501,
+                                    "name": "Barcelone",
+                                    "description": "Ville côtière célèbre pour ses œuvres de Gaudí, sa plage et sa vie nocturne animée.",
+                                    "imageUrl": "https://source.unsplash.com/800x600/?barcelona",
+                                    "places": {
+                                        "restaurants": [
+                                            {
+                                                "id": 5001,
+                                                "name": "Tickets",
+                                                "description": "Restaurant de tapas moderne et créatif du célèbre chef Albert Adrià.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?tapas",
+                                                "rating": 4.8
+                                            },
+                                            {
+                                                "id": 5002,
+                                                "name": "Can Culleretes",
+                                                "description": "Le plus ancien restaurant de Barcelone, servant des plats catalans traditionnels.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?spanishfood",
+                                                "rating": 4.7
+                                            }
+                                        ],
+                                        "museums": [
+                                            {
+                                                "id": 5003,
+                                                "name": "Musée Picasso",
+                                                "description": "Une collection exceptionnelle retraçant l'évolution artistique de Pablo Picasso.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?picasso",
+                                                "rating": 4.8
+                                            },
+                                            {
+                                                "id": 5004,
+                                                "name": "MNAC - Musée National d'Art de Catalogne",
+                                                "description": "Un musée offrant une grande collection d'art roman et gothique.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?mnac",
+                                                "rating": 4.7
+                                            }
+                                        ],
+                                        "historical_sites": [
+                                            {
+                                                "id": 5005,
+                                                "name": "Sagrada Familia",
+                                                "description": "Basilique emblématique de Gaudí encore en construction.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?sagradafamilia",
+                                                "rating": 4.9
+                                            },
+                                            {
+                                                "id": 5006,
+                                                "name": "Parc Güell",
+                                                "description": "Parc coloré et artistique conçu par Gaudí.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?parcguell",
+                                                "rating": 4.8
+                                            }
+                                        ],
+                                        "activities": [
+                                            {
+                                                "id": 5007,
+                                                "name": "Flâner sur La Rambla",
+                                                "description": "L’avenue la plus célèbre de Barcelone, parfaite pour une promenade.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?larambla",
+                                                "rating": 4.6
+                                            },
+                                            {
+                                                "id": 5008,
+                                                "name": "Profiter de la plage de la Barceloneta",
+                                                "description": "Détendez-vous sur la plage emblématique de Barcelone.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?barcelonetabeach",
+                                                "rating": 4.7
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "name": "Thaïlande",
+                            "cities": [
+                                {
+                                    "id": 601,
+                                    "name": "Bangkok",
+                                    "description": "Capitale vibrante avec ses temples dorés, ses marchés flottants et sa street food.",
+                                    "imageUrl": "https://source.unsplash.com/800x600/?bangkok",
+                                    "places": {
+                                        "restaurants": [
+                                            {
+                                                "id": 6001,
+                                                "name": "Gaggan",
+                                                "description": "Restaurant fusion thaï-indien célèbre pour son expérience gastronomique unique.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?thaifood",
+                                                "rating": 4.9
+                                            },
+                                            {
+                                                "id": 6002,
+                                                "name": "Jay Fai",
+                                                "description": "Une street food étoilée Michelin, réputée pour ses omelettes au crabe.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?streetfood",
+                                                "rating": 4.8
+                                            }
+                                        ],
+                                        "museums": [
+                                            {
+                                                "id": 6003,
+                                                "name": "Musée National de Bangkok",
+                                                "description": "Le plus grand musée de Thaïlande, riche en histoire et culture bouddhiste.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?nationalmuseumbangkok",
+                                                "rating": 4.7
+                                            },
+                                            {
+                                                "id": 6004,
+                                                "name": "Musée Jim Thompson House",
+                                                "description": "Ancienne maison du légendaire entrepreneur de la soie, remplie d'art thaïlandais.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?jimthompsonhouse",
+                                                "rating": 4.8
+                                            }
+                                        ],
+                                        "historical_sites": [
+                                            {
+                                                "id": 6005,
+                                                "name": "Grand Palais",
+                                                "description": "Ancienne résidence royale, un site impressionnant à ne pas manquer.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?grandpalace",
+                                                "rating": 4.9
+                                            },
+                                            {
+                                                "id": 6006,
+                                                "name": "Wat Arun",
+                                                "description": "Le Temple de l'Aube, un des temples les plus impressionnants de Bangkok.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?watarun",
+                                                "rating": 4.8
+                                            }
+                                        ],
+                                        "activities": [
+                                            {
+                                                "id": 6007,
+                                                "name": "Explorer les marchés flottants",
+                                                "description": "Une expérience unique pour découvrir la culture locale.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?floatingmarket",
+                                                "rating": 4.7
+                                            },
+                                            {
+                                                "id": 6008,
+                                                "name": "Prendre un cocktail au Sky Bar",
+                                                "description": "Un rooftop bar avec une vue imprenable sur la ville.",
+                                                "imageUrl": "https://source.unsplash.com/800x600/?skybar",
+                                                "rating": 4.8
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "countries": [
+                                {
+                                    "id": 7,
+                                    "name": "Brésil",
+                                    "cities": [
+                                        {
+                                            "id": 701,
+                                            "name": "Rio de Janeiro",
+                                            "description": "Célèbre pour son carnaval, ses plages mythiques et la statue du Christ Rédempteur.",
+                                            "imageUrl": "https://source.unsplash.com/800x600/?rio",
+                                            "places": {
+                                                "restaurants": [
+                                                    {
+                                                        "id": 7001,
+                                                        "name": "Fogo de Chão",
+                                                        "description": "Churrascaria brésilienne servant de la viande grillée à volonté.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?brazilianfood",
+                                                        "rating": 4.8
+                                                    },
+                                                    {
+                                                        "id": 7002,
+                                                        "name": "Aprazível",
+                                                        "description": "Restaurant en plein air offrant une vue panoramique sur la ville.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?riofood",
+                                                        "rating": 4.7
+                                                    }
+                                                ],
+                                                "museums": [
+                                                    {
+                                                        "id": 7003,
+                                                        "name": "Museu do Amanhã",
+                                                        "description": "Musée des sciences futuriste avec des expositions interactives.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?museum",
+                                                        "rating": 4.8
+                                                    },
+                                                    {
+                                                        "id": 7004,
+                                                        "name": "Museu Nacional",
+                                                        "description": "L'un des plus grands musées d'histoire naturelle du Brésil.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?historymuseum",
+                                                        "rating": 4.6
+                                                    }
+                                                ],
+                                                "historical_sites": [
+                                                    {
+                                                        "id": 7005,
+                                                        "name": "Christ Rédempteur",
+                                                        "description": "Statue emblématique offrant une vue incroyable sur Rio.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?christredeemer",
+                                                        "rating": 4.9
+                                                    },
+                                                    {
+                                                        "id": 7006,
+                                                        "name": "Escadaria Selarón",
+                                                        "description": "Un escalier coloré couvert de mosaïques, œuvre de Jorge Selarón.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?selaron",
+                                                        "rating": 4.8
+                                                    }
+                                                ],
+                                                "activities": [
+                                                    {
+                                                        "id": 7007,
+                                                        "name": "Plage de Copacabana",
+                                                        "description": "L'une des plages les plus célèbres du monde, idéale pour se détendre.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?copacabana",
+                                                        "rating": 4.7
+                                                    },
+                                                    {
+                                                        "id": 7008,
+                                                        "name": "Randonnée au Pain de Sucre",
+                                                        "description": "Vue imprenable sur la baie de Rio après une ascension spectaculaire.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?sugarloaf",
+                                                        "rating": 4.8
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 8,
+                                    "name": "Royaume-Uni",
+                                    "cities": [
+                                        {
+                                            "id": 801,
+                                            "name": "Londres",
+                                            "description": "Ville historique abritant Big Ben, le British Museum et la Tamise.",
+                                            "imageUrl": "https://source.unsplash.com/800x600/?london",
+                                            "places": {
+                                                "restaurants": [
+                                                    {
+                                                        "id": 8001,
+                                                        "name": "The Ledbury",
+                                                        "description": "Restaurant gastronomique proposant une cuisine britannique moderne.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?finefood",
+                                                        "rating": 4.9
+                                                    },
+                                                    {
+                                                        "id": 8002,
+                                                        "name": "Dishoom",
+                                                        "description": "Restaurant indien inspiré des cafés de Bombay, très apprécié.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?indianfood",
+                                                        "rating": 4.8
+                                                    }
+                                                ],
+                                                "museums": [
+                                                    {
+                                                        "id": 8003,
+                                                        "name": "British Museum",
+                                                        "description": "Un des plus grands musées du monde, retraçant l'histoire de l'humanité.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?britishmuseum",
+                                                        "rating": 4.9
+                                                    },
+                                                    {
+                                                        "id": 8004,
+                                                        "name": "Tate Modern",
+                                                        "description": "Musée d'art moderne et contemporain incontournable.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?tatemodern",
+                                                        "rating": 4.7
+                                                    }
+                                                ],
+                                                "historical_sites": [
+                                                    {
+                                                        "id": 8005,
+                                                        "name": "Big Ben & Palais de Westminster",
+                                                        "description": "Le célèbre horloge et le siège du Parlement britannique.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?bigben",
+                                                        "rating": 4.8
+                                                    },
+                                                    {
+                                                        "id": 8006,
+                                                        "name": "Tour de Londres",
+                                                        "description": "Ancienne prison et trésor de la Couronne britannique.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?toweroflondon",
+                                                        "rating": 4.7
+                                                    }
+                                                ],
+                                                "activities": [
+                                                    {
+                                                        "id": 8007,
+                                                        "name": "Balade en bateau sur la Tamise",
+                                                        "description": "Profitez d'une croisière sur la célèbre rivière londonienne.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?thames",
+                                                        "rating": 4.7
+                                                    },
+                                                    {
+                                                        "id": 8008,
+                                                        "name": "Vue panoramique depuis le London Eye",
+                                                        "description": "Observez Londres depuis cette grande roue emblématique.",
+                                                        "imageUrl": "https://source.unsplash.com/800x600/?londoneye",
+                                                        "rating": 4.8
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "countries": [
+                                        {
+                                            "id": 9,
+                                            "name": "Australie",
+                                            "cities": [
+                                                {
+                                                    "id": 901,
+                                                    "name": "Sydney",
+                                                    "description": "Ville emblématique avec l'Opéra de Sydney, la plage de Bondi et son port magnifique.",
+                                                    "imageUrl": "https://source.unsplash.com/800x600/?sydney",
+                                                    "places": {
+                                                        "restaurants": [
+                                                            {
+                                                                "id": 9001,
+                                                                "name": "Quay Restaurant",
+                                                                "description": "Un restaurant gastronomique offrant une vue spectaculaire sur l'Opéra.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?gourmet",
+                                                                "rating": 4.9
+                                                            },
+                                                            {
+                                                                "id": 9002,
+                                                                "name": "Bills",
+                                                                "description": "Restaurant décontracté célèbre pour ses pancakes et son petit-déjeuner australien.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?breakfast",
+                                                                "rating": 4.7
+                                                            }
+                                                        ],
+                                                        "museums": [
+                                                            {
+                                                                "id": 9003,
+                                                                "name": "Art Gallery of New South Wales",
+                                                                "description": "Un musée d'art proposant des œuvres australiennes et internationales.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?artmuseum",
+                                                                "rating": 4.8
+                                                            },
+                                                            {
+                                                                "id": 9004,
+                                                                "name": "Australian Museum",
+                                                                "description": "Le plus ancien musée d'Australie, spécialisé en histoire naturelle et anthropologie.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?australianmuseum",
+                                                                "rating": 4.7
+                                                            }
+                                                        ],
+                                                        "historical_sites": [
+                                                            {
+                                                                "id": 9005,
+                                                                "name": "Opéra de Sydney",
+                                                                "description": "Monument iconique reconnu pour son architecture unique et ses spectacles.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?sydneyopera",
+                                                                "rating": 4.9
+                                                            },
+                                                            {
+                                                                "id": 9006,
+                                                                "name": "Harbour Bridge",
+                                                                "description": "Un des ponts les plus célèbres du monde, offrant une vue panoramique sur la ville.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?harbourbridge",
+                                                                "rating": 4.8
+                                                            }
+                                                        ],
+                                                        "activities": [
+                                                            {
+                                                                "id": 9007,
+                                                                "name": "Détente à Bondi Beach",
+                                                                "description": "Profitez du sable doré et des vagues parfaites pour le surf.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?bondibeach",
+                                                                "rating": 4.7
+                                                            },
+                                                            {
+                                                                "id": 9008,
+                                                                "name": "Croisière dans le port de Sydney",
+                                                                "description": "Découvrez la ville depuis l'eau avec une croisière pittoresque.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?sydneyharbour",
+                                                                "rating": 4.8
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": 10,
+                                            "name": "Grèce",
+                                            "cities": [
+                                                {
+                                                    "id": 1001,
+                                                    "name": "Athènes",
+                                                    "description": "Berceau de la civilisation occidentale, célèbre pour l'Acropole et ses sites antiques.",
+                                                    "imageUrl": "https://source.unsplash.com/800x600/?athens",
+                                                    "places": {
+                                                        "restaurants": [
+                                                            {
+                                                                "id": 10001,
+                                                                "name": "Funky Gourmet",
+                                                                "description": "Restaurant deux étoiles Michelin servant une cuisine grecque revisitée.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?greekfood",
+                                                                "rating": 4.9
+                                                            },
+                                                            {
+                                                                "id": 10002,
+                                                                "name": "Klimataria",
+                                                                "description": "Taverne traditionnelle proposant des plats grecs authentiques et de la musique live.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?taverna",
+                                                                "rating": 4.7
+                                                            }
+                                                        ],
+                                                        "museums": [
+                                                            {
+                                                                "id": 10003,
+                                                                "name": "Musée de l'Acropole",
+                                                                "description": "Un musée moderne exposant des artefacts de l'Acropole d'Athènes.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?acropolesmuseum",
+                                                                "rating": 4.9
+                                                            },
+                                                            {
+                                                                "id": 10004,
+                                                                "name": "Musée archéologique national",
+                                                                "description": "Le plus grand musée de Grèce, dédié à l'archéologie et l'histoire antique.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?archaeologicalmuseum",
+                                                                "rating": 4.8
+                                                            }
+                                                        ],
+                                                        "historical_sites": [
+                                                            {
+                                                                "id": 10005,
+                                                                "name": "Acropole",
+                                                                "description": "Le site antique le plus emblématique de Grèce, surplombant la ville.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?acropolis",
+                                                                "rating": 5.0
+                                                            },
+                                                            {
+                                                                "id": 10006,
+                                                                "name": "Temple de Zeus Olympien",
+                                                                "description": "Ruines impressionnantes d'un temple dédié à Zeus.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?templeofzeus",
+                                                                "rating": 4.7
+                                                            }
+                                                        ],
+                                                        "activities": [
+                                                            {
+                                                                "id": 10007,
+                                                                "name": "Balade dans Plaka",
+                                                                "description": "Quartier pittoresque rempli de ruelles charmantes et de boutiques artisanales.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?plaka",
+                                                                "rating": 4.8
+                                                            },
+                                                            {
+                                                                "id": 10008,
+                                                                "name": "Coucher de soleil à la colline de Lycabette",
+                                                                "description": "Vue imprenable sur toute la ville au crépuscule.",
+                                                                "imageUrl": "https://source.unsplash.com/800x600/?lycabettus",
+                                                                "rating": 4.9
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
