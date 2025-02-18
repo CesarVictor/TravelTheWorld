@@ -320,21 +320,21 @@
                     "id": 501,
                     "name": "Barcelone",
                     "description": "Ville côtière célèbre pour ses œuvres de Gaudí, sa plage et sa vie nocturne animée.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?barcelona",
+                    "imageUrl": "https://barcelonesite.fr/images/barcelona_2.jpg",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 5001,
                                 "name": "Tickets",
                                 "description": "Restaurant de tapas moderne et créatif du célèbre chef Albert Adrià.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?tapas",
+                                "imageUrl": "https://albertadria.com/wp-content/uploads/2023/01/Tickets-%C2%AEPepoSeguraYU5L7900.jpg",
                                 "rating": 4.8
                             },
                             {
                                 "id": 5002,
                                 "name": "Can Culleretes",
                                 "description": "Le plus ancien restaurant de Barcelone, servant des plats catalans traditionnels.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?spanishfood",
+                                "imageUrl": "https://images.otstatic.com/prod/27199655/3/huge.jpg",
                                 "rating": 4.7
                             }
                         ],
@@ -343,14 +343,14 @@
                                 "id": 5003,
                                 "name": "Musée Picasso",
                                 "description": "Une collection exceptionnelle retraçant l'évolution artistique de Pablo Picasso.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?picasso",
+                                "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.eseibusinessschool.com%2Fwp-content%2Fuploads%2F2023%2F02%2FTips-for-your-first-visit-to-Barcelona-Picasso-Museum-1024x683.jpg&f=1&nofb=1&ipt=d75a97108039ebafe2e883499e957a6a97e7b1b0f4f8e33f84364e0bb5a5ff97&ipo=images",
                                 "rating": 4.8
                             },
                             {
                                 "id": 5004,
                                 "name": "MNAC - Musée National d'Art de Catalogne",
                                 "description": "Un musée offrant une grande collection d'art roman et gothique.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?mnac",
+                                "imageUrl": "https://www.barcelone.fr/f/espana/barcelona/guia/museo-nacional-arte-cataluna-m.jpg",
                                 "rating": 4.7
                             }
                         ],
@@ -359,14 +359,14 @@
                                 "id": 5005,
                                 "name": "Sagrada Familia",
                                 "description": "Basilique emblématique de Gaudí encore en construction.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?sagradafamilia",
+                                "imageUrl": "https://www.batiactu.com/images/auto/1200-900-m/20211208_142724_illustration-sagrada-familia-recadree.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 5006,
                                 "name": "Parc Güell",
                                 "description": "Parc coloré et artistique conçu par Gaudí.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?parcguell",
+                                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Barcelone_-_Parc_G%C3%BCell_-_Entr%C3%A9e.jpg",
                                 "rating": 4.8
                             }
                         ],
@@ -375,14 +375,14 @@
                                 "id": 5007,
                                 "name": "Flâner sur La Rambla",
                                 "description": "L’avenue la plus célèbre de Barcelone, parfaite pour une promenade.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?larambla",
+                                "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/03/e3/7d/a-stroll-down-la-rambla.jpg?w=1400&h=1400&s=1",
                                 "rating": 4.6
                             },
                             {
                                 "id": 5008,
                                 "name": "Profiter de la plage de la Barceloneta",
                                 "description": "Détendez-vous sur la plage emblématique de Barcelone.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?barcelonetabeach",
+                                "imageUrl": "https://estatics-nasia.dtibcn.cat/nasia-pro/media/2015%2C05%2Cplatja-barceloneta-760x428.jpg",
                                 "rating": 4.7
                             }
                         ]
