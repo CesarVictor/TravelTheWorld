@@ -9,19 +9,27 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ title, showSearchIcon = false, onSearchPress }) => {
   const words = title.split(" ");
-  const firstLine = words[0];
-  const secondLine = words.slice(1).join(" ");
+  const firstLine = words[0]; 
+  const secondLine = words.slice(1).join(" "); 
 
   return (
     <View style={styles.container}>
+    
+      <View style={styles.topContainer}>
+        <Text style={styles.subtitle}>LET'S GO!</Text>
+        <View style={styles.line} />
+      </View>
+
+ 
       <Text style={styles.title}>
-        <Text style={{ fontWeight: "normal" }}>{firstLine}</Text>
+        <Text style={{ color: "green", fontWeight: "normal" }}>{firstLine}</Text>
         {"\n"}
         {secondLine}
       </Text>
+
       {showSearchIcon && (
         <TouchableOpacity onPress={onSearchPress} style={styles.iconContainer}>
-          {/* Ici tu peux ajouter ton icône */}
+
         </TouchableOpacity>
       )}
     </View>
@@ -30,15 +38,30 @@ const Header: React.FC<HeaderProps> = ({ title, showSearchIcon = false, onSearch
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
     paddingHorizontal: 20,
     paddingBottom: 10,
   },
+  topContainer: {
+    alignItems: "flex-start", 
+    marginBottom: 10,
+  },
+  subtitle: {
+    color: "#D87C46", 
+    fontSize: 14,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    letterSpacing: 1.5,
+  },
+  line: {
+    width: "100%", 
+    maxWidth: 300, 
+    height: 2,
+    backgroundColor: "#ccc",
+    marginTop: 4,
+  },
   title: {
     fontFamily: 'PlayfairDisplay_400Regular',
-    fontSize: 32,
+    fontSize: 45,
     color: "black",
     fontWeight: "bold",
     textAlign: "left",

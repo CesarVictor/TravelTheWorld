@@ -398,21 +398,21 @@
                     "id": 601,
                     "name": "Bangkok",
                     "description": "Capitale vibrante avec ses temples dorés, ses marchés flottants et sa street food.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?bangkok",
+                    "imageUrl": "https://res-1.cloudinary.com/gorealtravel/image/upload/v1563889832/production/marketing/city/5d3181c870428e0008e0845c/city_main_image/BANGKOK.jpg",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 6001,
                                 "name": "Gaggan",
                                 "description": "Restaurant fusion thaï-indien célèbre pour son expérience gastronomique unique.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?thaifood",
+                                "imageUrl": "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2019/08/08/node_622665/40439053/public/2019/08/08/B9720514174Z.1_20190808155416_000%2BG1BE7BJ9C.3-0.jpg?itok=8FJLrMFU1565272463",
                                 "rating": 4.9
                             },
                             {
                                 "id": 6002,
                                 "name": "Jay Fai",
                                 "description": "Une street food étoilée Michelin, réputée pour ses omelettes au crabe.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?streetfood",
+                                "imageUrl": "https://www.finedininglovers.fr/sites/g/files/xknfdk1291/files/styles/im_landscape_100/public/2021-02/00_TP_A50BR21%20Icon%20Award%20-%20Jay%20Fai%20in%20action%204.jpg.webp?itok=rDtfeadJ",
                                 "rating": 4.8
                             }
                         ],
@@ -421,14 +421,14 @@
                                 "id": 6003,
                                 "name": "Musée National de Bangkok",
                                 "description": "Le plus grand musée de Thaïlande, riche en histoire et culture bouddhiste.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?nationalmuseumbangkok",
+                                "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/63/b8/a5/the-national-museum-bangkok.jpg?w=1200&h=-1&s=1",
                                 "rating": 4.7
                             },
                             {
                                 "id": 6004,
                                 "name": "Musée Jim Thompson House",
                                 "description": "Ancienne maison du légendaire entrepreneur de la soie, remplie d'art thaïlandais.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?jimthompsonhouse",
+                                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Jimthomson001.JPG",
                                 "rating": 4.8
                             }
                         ],
@@ -437,14 +437,14 @@
                                 "id": 6005,
                                 "name": "Grand Palais",
                                 "description": "Ancienne résidence royale, un site impressionnant à ne pas manquer.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?grandpalace",
+                                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRifJUfzRRHKM7z4zbm8TBRX1caBDWm_IoTsQ&s",
                                 "rating": 4.9
                             },
                             {
                                 "id": 6006,
                                 "name": "Wat Arun",
                                 "description": "Le Temple de l'Aube, un des temples les plus impressionnants de Bangkok.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?watarun",
+                                "imageUrl": "https://img3.oastatic.com/img2/77047234/600x300c/variant.jpg",
                                 "rating": 4.8
                             }
                         ],
@@ -453,14 +453,14 @@
                                 "id": 6007,
                                 "name": "Explorer les marchés flottants",
                                 "description": "Une expérience unique pour découvrir la culture locale.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?floatingmarket",
+                                "imageUrl": "https://thaiunika.com/wp-content/uploads/2022/09/marche-flottant-de-tha-kha.jpg",
                                 "rating": 4.7
                             },
                             {
                                 "id": 6008,
                                 "name": "Prendre un cocktail au Sky Bar",
                                 "description": "Un rooftop bar avec une vue imprenable sur la ville.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?skybar",
+                                "imageUrl": "https://www.thailandmagazine.com/wp-content/uploads/2018/06/Garden-of-wonder-by-PJ_lebua-2048x1365.jpg",
                                 "rating": 4.8
                             }
                         ]
@@ -476,21 +476,21 @@
                     "id": 701,
                     "name": "Rio de Janeiro",
                     "description": "Célèbre pour son carnaval, ses plages mythiques et la statue du Christ Rédempteur.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?rio",
+                    "imageUrl": "https://www.costacroisieres.fr/content/dam/costa/costa-magazine/article-images/what-to-see-in-rio-de-janeiro/rio-de-janeiro-panorama_YuJas-Shutterstock_2.jpg.image.694.390.low.jpg",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 7001,
                                 "name": "Fogo de Chão",
                                 "description": "Churrascaria brésilienne servant de la viande grillée à volonté.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?brazilianfood",
+                                "imageUrl": "https://easyreadernews.com/wp-content/uploads/2022/07/FogoMarketTable.jpg",
                                 "rating": 4.8
                             },
                             {
                                 "id": 7002,
                                 "name": "Aprazível",
                                 "description": "Restaurant en plein air offrant une vue panoramique sur la ville.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?riofood",
+                                "imageUrl": "https://assets.raisin.digital/media/places/bar-restaurant-wineshop-pleasant-11044.jpg",
                                 "rating": 4.7
                             }
                         ],
@@ -499,14 +499,14 @@
                                 "id": 7003,
                                 "name": "Museu do Amanhã",
                                 "description": "Musée des sciences futuriste avec des expositions interactives.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?museum",
+                                "imageUrl": "https://museudoamanha.org.br/sites/default/files/Visite_1280x800_MdA-BernardLessa__1456509569_189.60.197.72.jpg",
                                 "rating": 4.8
                             },
                             {
                                 "id": 7004,
                                 "name": "Museu Nacional",
                                 "description": "L'un des plus grands musées d'histoire naturelle du Brésil.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?historymuseum",
+                                "imageUrl": "https://www.unesco.org/sites/default/files/styles/best_image/public/museu_nacional_1b.jpg?itok=AwvF28ZC",
                                 "rating": 4.6
                             }
                         ],
@@ -515,14 +515,14 @@
                                 "id": 7005,
                                 "name": "Christ Rédempteur",
                                 "description": "Statue emblématique offrant une vue incroyable sur Rio.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?christredeemer",
+                                "imageUrl": "https://img-4.linternaute.com/DD3M5Da8G8IPRjeBxZLvkqyr98k=/fit-in/x630/smart/filters:fill(1D1D1B)/c50fdd2cc45345b4a859420483dbed58/ccmcms-linternaute/20192837.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 7006,
                                 "name": "Escadaria Selarón",
                                 "description": "Un escalier coloré couvert de mosaïques, œuvre de Jorge Selarón.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?selaron",
+                                "imageUrl": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/2c/f0/81.jpg",
                                 "rating": 4.8
                             }
                         ],
@@ -531,14 +531,14 @@
                                 "id": 7007,
                                 "name": "Plage de Copacabana",
                                 "description": "L'une des plages les plus célèbres du monde, idéale pour se détendre.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?copacabana",
+                                "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/57/8a/96/copacabana.jpg?w=900&h=500&s=1",
                                 "rating": 4.7
                             },
                             {
                                 "id": 7008,
                                 "name": "Randonnée au Pain de Sucre",
                                 "description": "Vue imprenable sur la baie de Rio après une ascension spectaculaire.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?sugarloaf",
+                                "imageUrl": "https://voyagepassions.files.wordpress.com/2022/01/03-rando-pain-de-sucre-lac-foreant-queyras-coq-c.jpg",
                                 "rating": 4.8
                             }
                         ]
@@ -554,21 +554,21 @@
                     "id": 801,
                     "name": "Londres",
                     "description": "Ville historique abritant Big Ben, le British Museum et la Tamise.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?london",
+                    "imageUrl": "https://images.ctfassets.net/mivicpf5zews/79gKRrVRcDh5qQ8gne7MFx/cf706f5b8841bea320c06c16a9cdad27/Go-To-London-Hero-1200x600.jpg?q=75",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 8001,
                                 "name": "The Ledbury",
                                 "description": "Restaurant gastronomique proposant une cuisine britannique moderne.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?finefood",
+                                "imageUrl": "https://images.squarespace-cdn.com/content/v1/6260a0f4f2a1571c44b03c6e/cdc7345a-574f-49f8-9451-3b29306e1180/IMG_6797.jpeg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 8002,
                                 "name": "Dishoom",
                                 "description": "Restaurant indien inspiré des cafés de Bombay, très apprécié.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?indianfood",
+                                "imageUrl": "https://www.dishoom.com/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fdaku84np%2Fproduction%2F33ff5eb665cd31ae31050ca837649d65e0e1cf53-2560x1502.jpg%3Ffit%3Dmax%26auto%3Dformat&w=3840&q=75",
                                 "rating": 4.8
                             }
                         ],
@@ -577,14 +577,14 @@
                                 "id": 8003,
                                 "name": "British Museum",
                                 "description": "Un des plus grands musées du monde, retraçant l'histoire de l'humanité.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?britishmuseum",
+                                "imageUrl": "https://www.visitlondon.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/british-museum/british-museum-2023-images/british-museum-in-london.jpg?h=360&w=640&rev=9a480da788614d0db07f2464e79ff70f&hash=33A9991BE2DE2CAF1B052471CD5ACEBE",
                                 "rating": 4.9
                             },
                             {
                                 "id": 8004,
                                 "name": "Tate Modern",
                                 "description": "Musée d'art moderne et contemporain incontournable.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?tatemodern",
+                                "imageUrl": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/17/37/a3.jpg",
                                 "rating": 4.7
                             }
                         ],
@@ -593,14 +593,14 @@
                                 "id": 8005,
                                 "name": "Big Ben & Palais de Westminster",
                                 "description": "Le célèbre horloge et le siège du Parlement britannique.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?bigben",
+                                "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/63/f8/bb/big-ben.jpg?w=900&h=500&s=1&pcx=1033&pcy=310&pchk=v1_bf93e1170e1f1f8d4cea",
                                 "rating": 4.8
                             },
                             {
                                 "id": 8006,
                                 "name": "Tour de Londres",
                                 "description": "Ancienne prison et trésor de la Couronne britannique.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?toweroflondon",
+                                "imageUrl": "https://media.clondres.com/resize/uploads/sites/5/2018/02/tour-de-londres.jpg?format=auto",
                                 "rating": 4.7
                             }
                         ],
@@ -609,14 +609,14 @@
                                 "id": 8007,
                                 "name": "Balade en bateau sur la Tamise",
                                 "description": "Profitez d'une croisière sur la célèbre rivière londonienne.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?thames",
+                                "imageUrl": "https://visite-londres.com/wp-content/uploads/2020/01/croisiere-tamise.jpg",
                                 "rating": 4.7
                             },
                             {
                                 "id": 8008,
                                 "name": "Vue panoramique depuis le London Eye",
                                 "description": "Observez Londres depuis cette grande roue emblématique.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?londoneye",
+                                "imageUrl": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0f/36/c2/60.jpg",
                                 "rating": 4.8
                             }
                         ]
@@ -632,21 +632,21 @@
                     "id": 901,
                     "name": "Sydney",
                     "description": "Ville emblématique avec l'Opéra de Sydney, la plage de Bondi et son port magnifique.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?sydney",
+                    "imageUrl": "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/qrt1zjeqpyhfvx6lngav/Visite%20d'une%20journ%C3%A9e%20de%20la%20ville%20de%20Sydney.jpg",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 9001,
                                 "name": "Quay Restaurant",
                                 "description": "Un restaurant gastronomique offrant une vue spectaculaire sur l'Opéra.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?gourmet",
+                                "imageUrl": "https://www.quay.com.au/wp-content/uploads/2019/07/Quay-view.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 9002,
                                 "name": "Bills",
                                 "description": "Restaurant décontracté célèbre pour ses pancakes et son petit-déjeuner australien.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?breakfast",
+                                "imageUrl": "https://media.timeout.com/images/104089225/750/422/image.jpg",
                                 "rating": 4.7
                             }
                         ],
@@ -655,14 +655,14 @@
                                 "id": 9003,
                                 "name": "Art Gallery of New South Wales",
                                 "description": "Un musée d'art proposant des œuvres australiennes et internationales.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?artmuseum",
+                                "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/68/4c/c4/south-building-of-art.jpg?w=900&h=-1&s=1",
                                 "rating": 4.8
                             },
                             {
                                 "id": 9004,
                                 "name": "Australian Museum",
                                 "description": "Le plus ancien musée d'Australie, spécialisé en histoire naturelle et anthropologie.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?australianmuseum",
+                                "imageUrl": "https://assets.atdw-online.com.au/images/1603bd19081547ca524f522af1535e1f.jpeg?rect=113%2C0%2C1823%2C1367&w=745&h=559&&rot=360&q=eyJ0eXBlIjoibGlzdGluZyIsImxpc3RpbmdJZCI6IjU2YjI0MDU1ZDVmMTU2NTA0NWQ4NWMxMSIsImRpc3RyaWJ1dG9ySWQiOiI1NmIxZWI5MzQ0ZmVjYTNkZjJlMzIwYzgiLCJhcGlrZXlJZCI6IjU2YjFlZTU5MGNmMjEzYWQyMGRjNTgxOSJ9",
                                 "rating": 4.7
                             }
                         ],
@@ -671,14 +671,14 @@
                                 "id": 9005,
                                 "name": "Opéra de Sydney",
                                 "description": "Monument iconique reconnu pour son architecture unique et ses spectacles.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?sydneyopera",
+                                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Sydneyoperahouse_at_night.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 9006,
                                 "name": "Harbour Bridge",
                                 "description": "Un des ponts les plus célèbres du monde, offrant une vue panoramique sur la ville.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?harbourbridge",
+                                "imageUrl": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/543000/543113-sydney-harbour-bridge.jpg",
                                 "rating": 4.8
                             }
                         ],
@@ -687,14 +687,14 @@
                                 "id": 9007,
                                 "name": "Détente à Bondi Beach",
                                 "description": "Profitez du sable doré et des vagues parfaites pour le surf.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?bondibeach",
+                                "imageUrl": "https://content.r9cdn.net/rimg/dimg/b8/05/48044093-city-41543-15984ab4ec9.jpg?crop=true&width=1366&height=768&xhint=1400&yhint=1155",
                                 "rating": 4.7
                             },
                             {
                                 "id": 9008,
                                 "name": "Croisière dans le port de Sydney",
                                 "description": "Découvrez la ville depuis l'eau avec une croisière pittoresque.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?sydneyharbour",
+                                "imageUrl": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0a/78/9f/e0.jpg",
                                 "rating": 4.8
                             }
                         ]
@@ -710,21 +710,21 @@
                     "id": 1001,
                     "name": "Athènes",
                     "description": "Berceau de la civilisation occidentale, célèbre pour l'Acropole et ses sites antiques.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?athens",
+                    "imageUrl": "https://a0.muscache.com/im/pictures/INTERNAL/INTERNAL-ImageByPlaceId-ChIJ8UNwBh-9oRQR3Y1mdkU1Nic-large_background/original/7bf3fcb0-9b53-422c-9b20-cf39f38e0ef6.jpeg   ",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 10001,
                                 "name": "Funky Gourmet",
                                 "description": "Restaurant deux étoiles Michelin servant une cuisine grecque revisitée.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?greekfood",
+                                "imageUrl": "https://img1.10bestmedia.com/Images/Photos/213967/p-funky-gourmet_55_660x440_201404232207.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 10002,
                                 "name": "Klimataria",
                                 "description": "Taverne traditionnelle proposant des plats grecs authentiques et de la musique live.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?taverna",
+                                "imageUrl": "https://www.thisisathens.org/sites/default/files/styles/social_share/public/2019-04/AKV-Restaurants-Klimataria.jpg?itok=Qdewgh4x",
                                 "rating": 4.7
                             }
                         ],
@@ -733,14 +733,14 @@
                                 "id": 10003,
                                 "name": "Musée de l'Acropole",
                                 "description": "Un musée moderne exposant des artefacts de l'Acropole d'Athènes.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?acropolesmuseum",
+                                "imageUrl": "https://vivreathenes.com/wp-content/uploads/2017/11/musee-acropole-athenes-batiment.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 10004,
                                 "name": "Musée archéologique national",
                                 "description": "Le plus grand musée de Grèce, dédié à l'archéologie et l'histoire antique.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?archaeologicalmuseum",
+                                "imageUrl": "https://visiterathenes.fr/images/musee-athenese.jpg",
                                 "rating": 4.8
                             }
                         ],
@@ -749,14 +749,14 @@
                                 "id": 10005,
                                 "name": "Acropole",
                                 "description": "Le site antique le plus emblématique de Grèce, surplombant la ville.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?acropolis",
+                                "imageUrl": "https://cdn-imgix.headout.com/microbrands-banner-image/image/b698f96a3bf7e35418940973f33c4708-The%20Acropolis%20of%20Athens.jpeg",
                                 "rating": 5.0
                             },
                             {
                                 "id": 10006,
                                 "name": "Temple de Zeus Olympien",
                                 "description": "Ruines impressionnantes d'un temple dédié à Zeus.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?templeofzeus",
+                                "imageUrl": "https://cdn-imgix.headout.com/media/images/32e37e1ac8e91373c1520d2e5ea954ac-15881-athens-skip-the-line--temple-of-olympian-zeus-entrance-ticket001.jpg?auto=format&w=900&h=562.5&q=90&ar=16%3A10&crop=faces%2Ccenter&fit=crop",
                                 "rating": 4.7
                             }
                         ],
@@ -765,14 +765,14 @@
                                 "id": 10007,
                                 "name": "Balade dans Plaka",
                                 "description": "Quartier pittoresque rempli de ruelles charmantes et de boutiques artisanales.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?plaka",
+                                "imageUrl": "https://www.thisisathens.org/sites/default/files/styles/social_share/public/2019-04/TGR-Neighbourhoods-Plaka-BannerImage.jpg?itok=eu1A0dUR",
                                 "rating": 4.8
                             },
                             {
                                 "id": 10008,
                                 "name": "Coucher de soleil à la colline de Lycabette",
                                 "description": "Vue imprenable sur toute la ville au crépuscule.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?lycabettus",
+                                "imageUrl": "https://www.athenes.fr/f/grecia/atenas/guia/colina-licabeto.jpg",
                                 "rating": 4.9
                             }
                         ]
