@@ -1,51 +1,49 @@
 import React from "react";
-import { View, Text, ImageBackground, StyleSheet } from "react-native";
-import { FontAwesome } from "@expo/vector-icons"; 
+import { View, Text, ImageBackground, StyleSheet, ImageSourcePropType } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
-interface CardProps {
-    image: string;
+type CardProps = {
+    image: ImageSourcePropType;
     location: string;
     title: string;
-    rating: number;
+    rating: string;
     closestTime: string;
-}
+};
 
 const Card: React.FC<CardProps> = ({ image, location, title, rating, closestTime }) => {
     return (
-        <ImageBackground source={{ uri: image }} style={styles.card}>
-            {/* Badge de localisation */}
-            <View style={styles.locationBadge}>
-                <Text style={styles.locationText}>{location}</Text>
-            </View>
-
-            {/* Détails de la carte */}
-            <View style={styles.content}>
-                {/* Titre de l'activité */}
-                <Text style={styles.title}>{title}</Text>
-
-                {/* Note et heure */}
-                <View style={styles.footer}>
-                    <View style={styles.rating}>
-                        <FontAwesome name="star" size={14} color="#FFD700" />
-                        <Text style={styles.ratingText}>{rating}</Text>
-                    </View>
-                    <View style={styles.closestTime}>
-                        <Text style={styles.closestTimeText}>Closest {closestTime}</Text>
+        <View style={styles.cardContainer}>
+            <ImageBackground source={image} style={styles.cardImage} imageStyle={{ borderRadius: 15 }}>
+                <View style={styles.locationBadge}>
+                    <Text style={styles.locationText}>{location}</Text>
+                </View>
+                <View style={styles.content}>
+                    <Text style={styles.title}>{title}</Text>
+                    <View style={styles.footer}>
+                        <View style={styles.rating}>
+                            <FontAwesome name="star" size={14} color="#FFD700" />
+                            <Text style={styles.ratingText}>{rating}</Text>
+                        </View>
+                        <View style={styles.closestTime}>
+                            <Text style={styles.closestTimeText}>Closest {closestTime}</Text>
+                        </View>
                     </View>
                 </View>
-            </View>
-        </ImageBackground>
+            </ImageBackground>
+        </View>
     );
 };
 
-// Styles
 const styles = StyleSheet.create({
-    card: {
+    cardContainer: {
         width: 300,
         height: 180,
         borderRadius: 15,
         overflow: "hidden",
-        margin: 10,
+        marginHorizontal: 10,
+    },
+    cardImage: {
+        flex: 1,
         justifyContent: "flex-end",
     },
     locationBadge: {
@@ -64,12 +62,12 @@ const styles = StyleSheet.create({
     },
     content: {
         padding: 15,
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
         borderBottomLeftRadius: 15,
         borderBottomRightRadius: 15,
     },
     title: {
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: "bold",
         color: "#fff",
         marginBottom: 5,

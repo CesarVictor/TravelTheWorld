@@ -1,6 +1,5 @@
-import { Text, StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
-
-import React from 'react';
+import React, { useState } from "react";
+import { Text, StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
 
 interface ButtonProps {
   title: string;
@@ -8,37 +7,47 @@ interface ButtonProps {
   style?: ViewStyle;
 }
 
-export const Button = ({ title, onPress, style }: ButtonProps) => {
-    return (
-      <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
-        <Text style={styles.text}>{title}</Text>
-      </TouchableOpacity>
-    );
-  };
+const ExploreButton: React.FC<ButtonProps> = ({ title, onPress, style }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <TouchableOpacity
+      style={[styles.button, isHovered ? styles.buttonHover : {}, style]}
+      onPress={onPress}
+      onPressIn={() => setIsHovered(true)}
+      onPressOut={() => setIsHovered(false)}
+    >
+
+      <Text style={[styles.text, isHovered ? styles.textHover : {}]}>{title}</Text>
+
+    </TouchableOpacity>
+  );
+};
+
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'black',
-    paddingVertical: 12,
-    paddingHorizontal: 30,
+    backgroundColor: "black",
+    paddingVertical: 15,
+    paddingHorizontal: 35,
     borderRadius: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    overflow: 'hidden',
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+    overflow: "hidden",
+  },
+  buttonHover: {
+    backgroundColor: "white",
   },
   text: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
     letterSpacing: 2,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
-  decorations: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    borderRadius: 30,
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.2)', // Bordures discrètes
-  },
+  textHover: {
+    color: "black",
+  }
 });
+
+export default ExploreButton;
