@@ -86,21 +86,21 @@
                     "id": 102,
                     "name": "Rome",
                     "description": "La capitale italienne, connue pour le Colisée, la Fontaine de Trevi et la Cité du Vatican.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?rome",
+                    "imageUrl": "https://pass-rome.fr/wp-content/uploads/sites/7/2021/12/que-faire-a-rome-1170x659.jpg",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 2001,
                                 "name": "Roscioli",
                                 "description": "Restaurant et épicerie fine réputé pour ses pâtes carbonara.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?italianfood",
+                                "imageUrl": "https://salumeriaroscioli.com/cdn/shop/files/Interno6.jpg?v=1736431358&width=2000",
                                 "rating": 4.7
                             },
                             {
                                 "id": 2002,
                                 "name": "La Pergola",
                                 "description": "Un restaurant trois étoiles Michelin avec une vue imprenable.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?restaurant",
+                                "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/86/35/8a/la-pergola.jpg?w=900&h=-1&s=1",
                                 "rating": 4.9
                             }
                         ],
@@ -109,14 +109,14 @@
                                 "id": 2003,
                                 "name": "Les Musées du Vatican",
                                 "description": "Abritent la Chapelle Sixtine et des œuvres de Michel-Ange.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?vatican",
+                                "imageUrl": "https://colosseum.tickets/slir/w750-c750:500/repository/1/1/115757e6ff513f0.jpg",
                                 "rating": 4.8
                             },
                             {
                                 "id": 2004,
                                 "name": "Musée du Capitole",
                                 "description": "Le plus ancien musée public du monde, riche en antiquités romaines.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?capitolmuseum",
+                                "imageUrl": "https://www.ticketsrome.com/images/immagini_pagine/Musees-du-Capitole-Rome.jpg",
                                 "rating": 4.6
                             }
                         ],
@@ -125,14 +125,14 @@
                                 "id": 2005,
                                 "name": "Colisée",
                                 "description": "L'amphithéâtre emblématique de Rome, vestige de l'Empire romain.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?colosseum",
+                                "imageUrl": "https://www.italie-authentique.com/app/uploads/sites/23/2018/11/adobestock_111251812.jpeg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 2006,
                                 "name": "Panthéon",
                                 "description": "Un temple antique parfaitement préservé, témoin de l'architecture romaine.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?pantheon",
+                                "imageUrl": "https://www.timographie360.fr/photos/realisations/principal/vignettes/visite-virtuelle-pantheon_81.jpg",
                                 "rating": 4.8
                             }
                         ],
@@ -141,14 +141,14 @@
                                 "id": 2007,
                                 "name": "Balade dans le Trastevere",
                                 "description": "Quartier pittoresque connu pour ses ruelles colorées et restaurants typiques.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?trastevere",
+                                "imageUrl": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/74/92/8e.jpg",
                                 "rating": 4.7
                             },
                             {
                                 "id": 2008,
                                 "name": "Lancer une pièce dans la Fontaine de Trevi",
                                 "description": "Tradition populaire pour s'assurer un retour à Rome.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?trevifountain",
+                                "imageUrl": "https://happylifeanywhere.com/wp-content/uploads/2022/08/fontaine-trevi.jpg",
                                 "rating": 4.6
                             }
                         ]
