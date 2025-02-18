@@ -242,21 +242,21 @@
                     "id": 401,
                     "name": "New York",
                     "description": "La ville qui ne dort jamais, abritant Times Square, Central Park et Broadway.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?newyork",
+                    "imageUrl": "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQohOFGTPNpsPdwmLRBfIJMATUo_76tLekCX673Y-Qf_XPkyCAMu0M9w_zok1iFS6J6T7lCOVsCKXazNKRk6MwGI_TOsva7x-c-TOAkEA",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 4001,
                                 "name": "Eleven Madison Park",
                                 "description": "Un des meilleurs restaurants du monde, cuisine raffinée et élégante.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?restaurant",
+                                "imageUrl": "https://media.architecturaldigest.com/photos/59d7d4ee9033bd1d685599cf/16:9/w_5599,h_3149,c_limit/untitled-225-Pano.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 4002,
                                 "name": "Katz’s Delicatessen",
                                 "description": "Un célèbre deli connu pour ses sandwichs au pastrami.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?deli",
+                                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Katz%27s_Delicatessen_%2851623899326%29.jpg",
                                 "rating": 4.7
                             }
                         ],
@@ -265,14 +265,14 @@
                                 "id": 4003,
                                 "name": "Metropolitan Museum of Art",
                                 "description": "Un des musées les plus prestigieux du monde avec des œuvres iconiques.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?metmuseum",
+                                "imageUrl": "https://cdn.sanity.io/images/cctd4ker/production/df2942014531e122504b075c1fe6aa6f3f8a3ee5-5120x2880.jpg?w=3840&q=75&fit=clip&auto=format",
                                 "rating": 4.9
                             },
                             {
                                 "id": 4004,
                                 "name": "MoMA",
                                 "description": "Le musée d'art moderne de New York, abritant des chefs-d'œuvre de Picasso et Van Gogh.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?moma",
+                                "imageUrl": "https://bonjournewyork.fr/wp-content/uploads/2021/09/visiter-moma-new-york.jpg",
                                 "rating": 4.8
                             }
                         ],
@@ -281,14 +281,14 @@
                                 "id": 4005,
                                 "name": "Statue de la Liberté",
                                 "description": "Symbole de liberté et d'espoir aux États-Unis.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?libertystatue",
+                                "imageUrl": "https://www.nyc.fr/wp-content/uploads/2015/07/statue_liberte2.jpg",
                                 "rating": 4.8
                             },
                             {
                                 "id": 4006,
                                 "name": "Empire State Building",
                                 "description": "Un gratte-ciel emblématique avec une vue panoramique sur NYC.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?empirestate",
+                                "imageUrl": "https://www.travelguide.fr/media/Empire-State-Building.jpeg",
                                 "rating": 4.7
                             }
                         ],
@@ -297,14 +297,14 @@
                                 "id": 4007,
                                 "name": "Balade à Central Park",
                                 "description": "Découvrez le poumon vert de New York à pied ou à vélo.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?centralpark",
+                                "imageUrl": "https://cdn.futura-sciences.com/sources/images/Central-Park-New-York.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 4008,
                                 "name": "Broadway Show",
                                 "description": "Assistez à un spectacle inoubliable sur Broadway.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?broadway",
+                                "imageUrl": "https://www.hollywoodreporter.com/wp-content/uploads/2023/07/newyorknewyork.jpg?w=1296&h=730&crop=1",
                                 "rating": 4.8
                             }
                         ]
