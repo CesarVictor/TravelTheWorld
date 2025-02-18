@@ -29,8 +29,6 @@ const FlatListCities = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Choose your city</Text>
-
-      {/* Liste des cities */}
       <FlatList
         data={cities}
         horizontal
@@ -46,25 +44,6 @@ const FlatListCities = () => {
           </TouchableOpacity>
         )}
       />
-
-      {/* Affichage des activités si une ville est sélectionnée */}
-      {selectedCity && (
-        <View style={styles.activitiesContainer}>
-          <Text style={styles.subtitle}>Activities in {selectedCity.name}</Text>
-          <FlatList
-            data={selectedCity.places.activities}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => (
-              <View style={styles.activityCard}>
-                <Image source={{ uri: item.imageUrl }} style={styles.activityImage} />
-                <Text style={styles.activityName}>{item.name}</Text>
-              </View>
-            )}
-          />
-        </View>
-      )}
     </View>
   );
 };

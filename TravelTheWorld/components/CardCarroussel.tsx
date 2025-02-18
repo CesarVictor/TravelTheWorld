@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import {
   View,
   Text,
@@ -8,52 +8,48 @@ import {
   FlatList,
   NativeSyntheticEvent,
   NativeScrollEvent,
+  TouchableOpacity,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { DataService } from "@/Data/data";
 import { City } from "@/Data/data";
 
 const { width } = Dimensions.get("window");
 
+type CardCarouselProps = {
+  cities: City[];
+  onChangeIndex?: (index: number) => void;
+  onSelectCity?: (cityName: string) => void;
+};
 
-const CardCarousel: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const flatListRef = useRef<FlatList<City>>(null);
+const CardCarousel: React.FC<CardCarouselProps> = ({ cities, onChangeIndex, onSelectCity }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const flatListRef = useRef<FlatList<City>>(null);
 
-    const [cities, setCities] = useState<City[]>([]);
-    
-    useEffect(() => {
-    const fetchCities = async () => {
-        const result = await DataService.getAllCities();
-        if (result) {
-        setCities(result);
-        }
-    };
-
-    fetchCities();
-    }, []);
-
-
-    const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-        const contentOffsetX = event.nativeEvent.contentOffset.x;
-        const index = Math.floor(contentOffsetX / width);
-        setActiveIndex(index);
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const contentOffsetX = event.nativeEvent.contentOffset.x;
+    const index = Math.floor(contentOffsetX / width);
+    setActiveIndex(index);
+    if (onChangeIndex) {
+      onChangeIndex(index);
     }
+  };
 
-    const renderItem = ({ item }: { item: City }) => (
-    <View style={styles.card}>
+  const renderItem = ({ item }: { item: City }) => (
+    <TouchableOpacity onPress={() => onSelectCity?.(item.name)}>
+      <View style={styles.card}>
         <Image source={{ uri: item.imageUrl }} style={styles.image} />
         <LinearGradient
-        colors={["transparent", "rgba(0,0,0,0.6)"]}
-        style={styles.overlay}
+          colors={["transparent", "rgba(0,0,0,0.6)"]}
+          style={styles.overlay}
         />
         <Text style={styles.title}>{item.name}</Text>
-    </View>
-    );
+      </View>
+    </TouchableOpacity>
+  );
 
-    return (
+  return (
     <View style={styles.container}>
-        <FlatList
+      <FlatList
         ref={flatListRef}
         data={cities}
         renderItem={renderItem}
@@ -63,17 +59,17 @@ const CardCarousel: React.FC = () => {
         showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}
         scrollEventThrottle={16}
-        />
-        <View style={styles.pagination}>
+      />
+      <View style={styles.pagination}>
         {cities.map((_, index) => (
-            <View
+          <View
             key={index}
             style={[styles.dot, activeIndex === index && styles.activeDot]}
-            />
+          />
         ))}
-        </View>
+      </View>
     </View>
-    );
+  );
 };
 
 const styles = StyleSheet.create({
@@ -85,7 +81,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: "hidden",
     backgroundColor: "#fff",
-    // Centrage horizontal de la carte dans la FlatList
     marginHorizontal: (width - width * 0.8) / 2,
   },
   image: {

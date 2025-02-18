@@ -1,30 +1,114 @@
-import { View, Text, TouchableOpacity, ImageBackground, StyleSheet } from "react-native";
-import { useRouter } from "expo-router";
-import Button from "../components/Button";
-import {useFonts, PlayfairDisplay_400Regular} from "@expo-google-fonts/playfair-display";
-import Header from "@/components/Header";
-import React from "react";
-import CardCarousel from "@/components/CardCarroussel";
+import React, { useState, useRef } from "react";
+import {
+  View,
+  Text,
+  Image,
+  Dimensions,
+  StyleSheet,
+  FlatList,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { City } from "@/Data/data";
 
-export default function HomeScreen() {
-  const router = useRouter();
+const { width } = Dimensions.get("window");
 
-  const [fontsLoaded] = useFonts({
-    PlayfairDisplay_400Regular,
-  });
+type CardCarouselProps = {
+  cities: City[];
+  onChangeIndex?: (index: number) => void;
+};
+
+const CardCarousel: React.FC<CardCarouselProps> = ({ cities, onChangeIndex }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const flatListRef = useRef<FlatList<City>>(null);
+
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const contentOffsetX = event.nativeEvent.contentOffset.x;
+    const index = Math.floor(contentOffsetX / width);
+    setActiveIndex(index);
+    if (onChangeIndex) {
+      onChangeIndex(index);
+    }
+  };
+
+  const renderItem = ({ item }: { item: City }) => (
+    <View style={styles.card}>
+      <Image source={{ uri: item.imageUrl }} style={styles.image} />
+      <LinearGradient
+        colors={["transparent", "rgba(0,0,0,0.6)"]}
+        style={styles.overlay}
+      />
+      <Text style={styles.title}>{item.name}</Text>
+    </View>
+  );
 
   return (
-    <ImageBackground source={require("../assets/images/welcome-bg.png")} style={styles.container}>
-    <View style={styles.overlay}>
-        <Header title="Hello, Leonard!" />
-        <CardCarousel />
-        <Button title="Explore" onPress={() => router.navigate("/city")} />
+    <View style={styles.container}>
+      <FlatList
+        ref={flatListRef}
+        data={cities}
+        renderItem={renderItem}
+        keyExtractor={(_, index) => index.toString()}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
+      />
+      <View style={styles.pagination}>
+        {cities.map((_, index) => (
+          <View
+            key={index}
+            style={[styles.dot, activeIndex === index && styles.activeDot]}
+          />
+        ))}
+      </View>
     </View>
-    </ImageBackground>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center",  },
-  overlay: { padding: 20, borderRadius: 10, width: "80%", height: "80%", flexDirection: "column", justifyContent: "space-between" },
+  container: {
+    alignItems: "center",
+  },
+  card: {
+    width: width * 0.8,
+    borderRadius: 20,
+    overflow: "hidden",
+    backgroundColor: "#fff",
+    // Pour centrer la carte dans la FlatList
+    marginHorizontal: (width - width * 0.8) / 2,
+  },
+  image: {
+    width: "100%",
+    height: 300,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+  },
+  title: {
+    position: "absolute",
+    bottom: 20,
+    alignSelf: "center",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#fff",
+  },
+  pagination: {
+    flexDirection: "row",
+    marginTop: 10,
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: "#ccc",
+    marginHorizontal: 4,
+  },
+  activeDot: {
+    backgroundColor: "#000",
+  },
 });
+
+export default CardCarousel;
