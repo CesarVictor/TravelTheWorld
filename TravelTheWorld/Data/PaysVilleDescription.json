@@ -8,21 +8,21 @@
                     "id": 101,
                     "name": "Paris",
                     "description": "La ville lumière, célèbre pour la Tour Eiffel, le Louvre et sa gastronomie raffinée.",
-                    "imageUrl": "https://source.unsplash.com/800x600/?paris",
+                    "imageUrl": "https://dyn.eu.mktgcdn.com/f/100004519/N2BB4ohwclor2uLoZ7XMHgJmxOZaMOokMdQqqXQAq3s.jpg/width=500,height=500",
                     "places": {
                         "restaurants": [
                             {
                                 "id": 1001,
                                 "name": "Le Meurice",
                                 "description": "Un restaurant gastronomique étoilé avec une cuisine française raffinée.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?frenchfood",
+                                "imageUrl": "https://www.alainducasse-meurice.com/sites/default/files/boxes/restaurant-le-meurice-alain-ducasse-hr-mark-read_0.jpg",
                                 "rating": 4.8
                             },
                             {
                                 "id": 1002,
                                 "name": "L'Ambroisie",
                                 "description": "Un restaurant trois étoiles au Michelin avec des plats d'exception.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?restaurant",
+                                "imageUrl": "https://img3.parisbouge.com/qod-Vn2GPDwXqWidk3OjSEjwMlcggswHLoC94qzvPcg/rs:fit:1280:1280:1/g:ce/YzNhNzM2ZjAtNGY4MS00NzJiLTk4ODItNzAxOTQwYTA5Yzk2LmpwZw.jpg",
                                 "rating": 4.9
                             }
                         ],
@@ -31,14 +31,14 @@
                                 "id": 1003,
                                 "name": "Musée du Louvre",
                                 "description": "Le plus grand musée du monde abritant la Joconde et la Vénus de Milo.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?louvre",
+                                "imageUrl": "https://www.relaisdulouvre.com/wp-content/uploads/2024/03/Louvre1-1536x1022.jpg",
                                 "rating": 4.9
                             },
                             {
                                 "id": 1004,
                                 "name": "Musée d'Orsay",
                                 "description": "Un musée impressionniste avec des œuvres de Monet et Van Gogh.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?orsay",
+                                "imageUrl": "https://cdn.mediatheque.epmoo.fr/link/ddd19ajx84pg3mo.jpg",
                                 "rating": 4.7
                             }
                         ],
@@ -47,14 +47,14 @@
                                 "id": 1005,
                                 "name": "Tour Eiffel",
                                 "description": "Monument emblématique offrant une vue panoramique sur Paris.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?eiffeltower",
+                                "imageUrl": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/12/41/5c/8d.jpg",
                                 "rating": 4.8
                             },
                             {
                                 "id": 1006,
                                 "name": "Notre-Dame de Paris",
                                 "description": "Cathédrale gothique célèbre pour ses gargouilles et son architecture.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?notredame",
+                                "imageUrl": "https://cdn.paris.fr/paris/2024/10/22/huge-23de60197c9de9ba90880160c71c3417.jpg",
                                 "rating": 4.7
                             }
                         ],
@@ -63,14 +63,14 @@
                                 "id": 1007,
                                 "name": "Croisière sur la Seine",
                                 "description": "Découvrez Paris depuis la Seine en bateau mouche.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?seineriver",
+                                "imageUrl": "https://www.croisieres-en-seine.fr/wp-content/uploads/2023/08/location-peniche-mariage-paris-848x450.jpg",
                                 "rating": 4.6
                             },
                             {
                                 "id": 1008,
                                 "name": "Montmartre et Sacré-Cœur",
                                 "description": "Balade dans le quartier bohème et vue imprenable depuis la basilique.",
-                                "imageUrl": "https://source.unsplash.com/800x600/?montmartre",
+                                "imageUrl": "https://image.over-blog.com/lxKcFycopwmaBsS0i3G8r79Z8Kc=/filters:no_upscale()/image%2F0931735%2F20201010%2Fob_db0409_p1630459.JPG",
                                 "rating": 4.7
                             }
                         ]
