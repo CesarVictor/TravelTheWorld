@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
 
-const CustomBottomTab = ({ state, descriptors, navigation }) => {
+const BottomTab = ({state, descriptors, navigation }) => {
   return (
     <View style={styles.tabContainer}>
       {/* Navigation principale */}

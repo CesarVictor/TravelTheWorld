@@ -1,11 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import DiscoverScreen from "./screens/DiscoverScreen";
-import DosScreen from "./screens/DosScreen";
-import DonesScreen from "./screens/DonesScreen";
-import ProfileScreen from "./screens/ProfileScreen";
-import CustomBottomTab from "./components/CustomBottomTab";
+import DiscoverScreen from "@/components/DiscoverScreen";
+import DosScreen from "@/components/DosScreen";
+import DonesScreen from "@/components/DonesScreen";
+import ProfileScreen from "@/components/ProfilesScreen";
+import CustomBottomTab from "@/components/BottomTab";
 
 const Tab = createBottomTabNavigator();
 
