@@ -1,31 +1,22 @@
 import React from "react";
 import { View, Text, ImageBackground, StyleSheet, ImageSourcePropType } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { Place } from "@/Data/data";
 
 type CardProps = {
-    image: ImageSourcePropType;
-    location: string;
-    title: string;
-    rating: string;
-    closestTime: string;
+    place: Place
 };
 
-const Card: React.FC<CardProps> = ({ image, location, title, rating, closestTime }) => {
+const Card: React.FC<CardProps> = ({ place }) => {
     return (
         <View style={styles.cardContainer}>
-            <ImageBackground source={image} style={styles.cardImage} imageStyle={{ borderRadius: 15 }}>
-                <View style={styles.locationBadge}>
-                    <Text style={styles.locationText}>{location}</Text>
-                </View>
+            <ImageBackground source={{uri: place.imageUrl}} style={styles.cardImage} imageStyle={{ borderRadius: 15 }}>
                 <View style={styles.content}>
-                    <Text style={styles.title}>{title}</Text>
+                    <Text style={styles.title}>{place.name}</Text>
                     <View style={styles.footer}>
                         <View style={styles.rating}>
                             <FontAwesome name="star" size={14} color="#FFD700" />
-                            <Text style={styles.ratingText}>{rating}</Text>
-                        </View>
-                        <View style={styles.closestTime}>
-                            <Text style={styles.closestTimeText}>Closest {closestTime}</Text>
+                            <Text style={styles.ratingText}>{place.rating}</Text>
                         </View>
                     </View>
                 </View>

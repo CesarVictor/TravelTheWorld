@@ -75,13 +75,13 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cities, onChangeIndex, onSe
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
+    width: "100%",
   },
   card: {
     width: width * 0.8,
     borderRadius: 20,
     overflow: "hidden",
     backgroundColor: "#fff",
-    marginHorizontal: (width - width * 0.8) / 2,
   },
   image: {
     width: "100%",

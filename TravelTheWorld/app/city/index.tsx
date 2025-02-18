@@ -22,8 +22,7 @@ export default function CityScreen() {
 
     fetchCities();
   }, []);
-
-  // Choisit l'image de fond en fonction de l'indice actif
+  
   const backgroundImage = cities[activeIndex]?.imageUrl
 
   return (
