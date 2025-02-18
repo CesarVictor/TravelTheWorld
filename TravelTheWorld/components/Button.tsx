@@ -19,7 +19,6 @@ const ExploreButton: React.FC<ButtonProps> = ({ title, onPress, style }) => {
     >
 
       <Text style={[styles.text, isHovered ? styles.textHover : {}]}>{title}</Text>
-
     </TouchableOpacity>
   );
 };
@@ -27,8 +26,8 @@ const ExploreButton: React.FC<ButtonProps> = ({ title, onPress, style }) => {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: "black",
-    paddingVertical: 15,
-    paddingHorizontal: 35,
+    paddingVertical: 30,
+    paddingHorizontal: 50,
     borderRadius: 5,
     alignItems: "center",
     justifyContent: "center",
