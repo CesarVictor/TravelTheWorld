@@ -7,6 +7,7 @@ import CategoryFilter from "@/components/categoryFilter";
 import Header from "@/components/Header";
 import Card from "@/components/Card";
 import { Place } from "@/Data/data";
+import MainComponent from "@/components/MainComponent";
 
 export default function CityDetailScreen() {
   const { city } = useLocalSearchParams(); // Récupère "city" depuis l'URL
@@ -54,15 +55,14 @@ export default function CityDetailScreen() {
       <View style={styles.container}>
         <Header title={`Discover, ${cityData.name}`} showSearchIcon={true} />
         <CategoryFilter categories={categories} onSelectCategory={(category) => console.log(category)} />
-        <Text style={styles.title}>{cityData.name}</Text>
-        <Text style={styles.description}>{cityData.description}</Text>
+        <MainComponent places={cityData?.places || []}/>
         <Button title="Back to Cities" onPress={() => router.push("/city")} />
       </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  container: { flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "white" },
   overlay: {
     backgroundColor: "rgba(0,0,0,0.5)",
     padding: 20,
