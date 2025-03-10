@@ -38,7 +38,6 @@ const Header: React.FC<HeaderProps> = ({ title, showSearchIcon = false, onSearch
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
     paddingBottom: 10,
   },
   topContainer: {

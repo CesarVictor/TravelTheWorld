@@ -74,6 +74,11 @@ export class DataService {
         const countries = await this.getAllCountries();
         return countries ? countries.flatMap(country => country.cities) : null;
     }
+
+    static async getAllPlaces(): Promise<Place[] | null> {
+        const cities = await this.getAllCities();
+        return cities ? cities.flatMap(city => Object.values(city.places).flat()) : null;
+    }
 }
 
 export class DataServiceError extends Error {

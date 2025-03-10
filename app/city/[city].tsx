@@ -33,7 +33,6 @@ export default function CityDetailScreen() {
     return <ActivityIndicator style={styles.loader} size="large" color="black" />;
   }
 
-  const categories = ["all", "restaurant", "hotel", "museum", "park", "shop"];
 
 
   // render item function
@@ -51,10 +50,13 @@ export default function CityDetailScreen() {
     );
   }
 
+  const categories = Object.keys(cityData.places);
+
   return (
       <View style={styles.container}>
         <Header title={`Discover, ${cityData.name}`} showSearchIcon={true} />
         <CategoryFilter categories={categories} onSelectCategory={(category) => console.log(category)} />
+
         <MainComponent places={cityData?.places || []}/>
         <Button title="Back to Cities" onPress={() => router.push("/city")} />
       </View>
