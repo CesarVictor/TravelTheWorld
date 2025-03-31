@@ -1,66 +1,90 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
+import React from "react";
+import { FlatList, Text, TouchableOpacity, StyleSheet, View, Animated } from "react-native";
+import { useThemeColor } from "@/hooks/useThemeColor";
 
 type CategoryFilterProps = {
-    categories: string[];
-    onSelectCategory: (category: string) => void;
+  categories: string[];
+  selectedCategory: string;
+  onSelectCategory: (category: string) => void;
 };
 
-const CategoryFilter: React.FC<CategoryFilterProps> = ({ categories, onSelectCategory }) => {
-    const [selectedCategory, setSelectedCategory] = useState<string>(categories[0]);
+const CATEGORY_LABELS: Record<string, string> = {
+  all: "Tout",
+  restaurants: "Restaurants",
+  museums: "Musées",
+  historical_sites: "Sites historiques",
+  activities: "Activités",
+};
 
-    const handleCategoryPress = (category: string) => {
-        setSelectedCategory(category);
-        onSelectCategory(category);
-    };
-
-    return (
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.container}>
-            {categories.map((category, index) => (
-                <TouchableOpacity
-                    key={index}
-                    style={[
-                        styles.button,
-                        selectedCategory === category && styles.selectedButton
-                    ]}
-                    onPress={() => handleCategoryPress(category)}
-                >
-                    <Text style={[styles.text, selectedCategory === category && styles.selectedText]}>
-                        {category.toUpperCase()}
-                    </Text>
-                </TouchableOpacity>
-            ))}
-        </ScrollView>
-    );
+const CategoryFilter: React.FC<CategoryFilterProps> = ({ 
+  categories, 
+  selectedCategory, 
+  onSelectCategory 
+}) => {
+  const tintColor = useThemeColor({}, 'tint');
+  
+  return (
+    <FlatList
+      horizontal
+      data={categories}
+      keyExtractor={(item) => item}
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={styles.container}
+      renderItem={({ item }) => {
+        const isSelected = item === selectedCategory;
+        return (
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={[
+              styles.button,
+              isSelected && [styles.selectedButton, { backgroundColor: `${tintColor}20` }]
+            ]}
+            onPress={() => onSelectCategory(item)}
+          >
+            <Text 
+              style={[
+                styles.text, 
+                isSelected && [styles.selectedText, { color: tintColor }]
+              ]}
+            >
+              {(CATEGORY_LABELS[item] ?? item)}
+            </Text>
+          </TouchableOpacity>
+        );
+      }}
+    />
+  );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: "row", 
-        alignItems: "center", 
-        paddingVertical: 10,
-        paddingHorizontal: 10, 
-    },
-    button: {
-        paddingVertical: 8,
-        paddingHorizontal: 15,
-        borderRadius: 20,
-        backgroundColor: "transparent",
-        marginHorizontal: 5,
-        alignItems: "center", 
-        justifyContent: "center", 
-    },
-    selectedButton: {
-        backgroundColor: "#D1E7E0", 
-    },
-    text: {
-        fontSize: 14,
-        fontWeight: "500",
-        color: "#666",
-    },
-    selectedText: {
-        color: "#2C534F", 
-    },
+  container: {
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+  },
+  button: {
+    paddingVertical: 8,
+    paddingHorizontal: 15,
+    borderRadius: 20,
+    backgroundColor: "#f2f2f2",
+    marginRight: 12,
+    elevation: 1,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 1,
+  },
+  selectedButton: {
+    backgroundColor: "#D1E7E0",
+  },
+  text: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: "#666",
+  },
+  selectedText: {
+    fontWeight: "600",
+    color: "#2C534F",
+  },
 });
 
 export default CategoryFilter;
