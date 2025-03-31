@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ImageBackground, ActivityIndicator, ScrollView, SafeAreaView, TouchableOpacity, StatusBar } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ActivityIndicator,
+  TouchableOpacity,
+} from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { City, DataService, Places } from "@/Data/data";
 import Button from "@/components/Button";
 import { Feather } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { City, DataService, Place } from "@/Data/data";
+import CategoryFilter from "@/components/categoryFilter";
+import Header from "@/components/Header";
+import Card from "@/components/Card";
 import MainComponent from "@/components/MainComponent";
+import BottomDockMenu from "@/components/BottomDockMenu";
+
+const categories = ["All", "Attractions", "Restaurants", "Hotels", "Museums", "Parks", "Shopping"];
 
 export default function CityDetailScreen() {
   const { city } = useLocalSearchParams();
   const router = useRouter();
   const [cityData, setCityData] = useState<City | null>(null);
   const [loading, setLoading] = useState(true);
+  const [menuVisible, setMenuVisible] = useState(false); 
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   useEffect(() => {
     const fetchCityData = async () => {
       try {
         const cities = await DataService.getAllCities();
         const foundCity = cities?.find(
+        
           (c) => c.name.toLowerCase() === String(city).toLowerCase()
+      
         );
 
         if (foundCity) {
@@ -43,6 +59,8 @@ export default function CityDetailScreen() {
     );
   }
 
+  const renderItem = ({ item }: { item: Place }) => <Card place={item} />;
+
   if (!cityData) {
     return (
       <View style={styles.errorContainer}>
@@ -53,41 +71,21 @@ export default function CityDetailScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" />
-      
-      {/* Header avec image */}
-      <View style={styles.header}>
-        <ImageBackground 
-          source={{ uri: cityData.imageUrl }} 
-          style={styles.headerImage}
-        >
-          <LinearGradient
-            colors={['rgba(0,0,0,0.5)', 'transparent']}
-            style={styles.headerGradient}
-          >
-            <TouchableOpacity 
-              style={styles.backButton} 
-              onPress={() => router.back()}
-            >
-              <Feather name="arrow-left" size={24} color="white" />
-            </TouchableOpacity>
-            
-            <Text style={styles.cityName}>{cityData.name}</Text>
-          </LinearGradient>
-        </ImageBackground>
-      </View>
-      
-      {/* Description brève */}
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionText}>{cityData.description}</Text>
-      </View>
-      
-      {/* Contenu principal */}
-      <View style={styles.mainContent}>
-        <MainComponent places={cityData.places} loading={false} />
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Header title={`Discover, ${cityData.name}`} showSearchIcon={true} />
+      <MainComponent places={cityData?.places || []} loading={false} />
+      {!menuVisible && (
+        <TouchableOpacity style={styles.fab} onPress={() => setMenuVisible(true)}>
+          <Feather name="menu" size={24} color="#fff" />
+        </TouchableOpacity>
+      )}
+      {menuVisible && (
+        <BottomDockMenu
+          onChangeCity={() => router.push("/city")}
+          onClose={() => setMenuVisible(false)}
+        />
+      )}
+    </View>
   );
 }
 
@@ -158,5 +156,19 @@ const styles = StyleSheet.create({
   },
   mainContent: {
     flex: 1,
-  }
+  },
+  
+  fab: {
+    position: "absolute",
+    bottom: 25,
+    right: 25,
+    backgroundColor: "#000",
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 8,
+    zIndex: 10,
+  },
 });

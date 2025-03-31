@@ -8,7 +8,8 @@ type CategoryFilterProps = {
   onSelectCategory: (category: string) => void;
 };
 
-const CATEGORY_LABELS: Record<string, string> = {
+// Exporter la constante pour permettre son utilisation ailleurs
+export const CATEGORY_LABELS: Record<string, string> = {
   all: "Tout",
   restaurants: "Restaurants",
   museums: "Musées",

@@ -8,13 +8,8 @@ import SectionSkeleton from "./skeleton/SectionSkeleton";
 import CategoryFilterSkeleton from "./skeleton/CategoryFilterSkeleton";
 import TopCardSkeleton from "./skeleton/TopCardSkeleton";
 
-const CATEGORY_LABELS: Record<string, string> = {
-  all: "Tout",
-  restaurants: "Restaurants",
-  museums: "Musées",
-  historical_sites: "Sites historiques",
-  activities: "Activités",
-};
+// Importer CATEGORY_LABELS depuis categoryFilter plutôt que de le redéfinir
+import { CATEGORY_LABELS } from "./categoryFilter";
 
 interface MainComponentProps {
   places: Places;
