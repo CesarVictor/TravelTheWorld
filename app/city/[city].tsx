@@ -9,13 +9,10 @@ import {
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Button from "@/components/Button";
 import { Feather } from "@expo/vector-icons";
-import { LinearGradient } from "expo-linear-gradient";
 import { City, DataService, Place } from "@/Data/data";
-import CategoryFilter from "@/components/categoryFilter";
-import Header from "@/components/Header";
-import Card from "@/components/Card";
 import MainComponent from "@/components/MainComponent";
 import BottomDockMenu from "@/components/BottomDockMenu";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const categories = ["All", "Attractions", "Restaurants", "Hotels", "Museums", "Parks", "Shopping"];
 
@@ -24,17 +21,18 @@ export default function CityDetailScreen() {
   const router = useRouter();
   const [cityData, setCityData] = useState<City | null>(null);
   const [loading, setLoading] = useState(true);
-  const [menuVisible, setMenuVisible] = useState(false); 
+  const [menuVisible, setMenuVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     const fetchCityData = async () => {
       try {
         const cities = await DataService.getAllCities();
         const foundCity = cities?.find(
-        
+
           (c) => c.name.toLowerCase() === String(city).toLowerCase()
-      
+
         );
 
         if (foundCity) {
@@ -59,7 +57,6 @@ export default function CityDetailScreen() {
     );
   }
 
-  const renderItem = ({ item }: { item: Place }) => <Card place={item} />;
 
   if (!cityData) {
     return (
@@ -71,8 +68,12 @@ export default function CityDetailScreen() {
   }
 
   return (
-    <View style={styles.container}>
-      <Header title={`Discover, ${cityData.name}`} showSearchIcon={true} />
+    <View style={[styles.container, { paddingTop: insets.top }]}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.discoverText}>Discover,</Text>
+        <Text style={styles.cityTitleText}>{cityData.name}!</Text>
+      </View>
+
       <MainComponent places={cityData?.places || []} loading={false} />
       {!menuVisible && (
         <TouchableOpacity style={styles.fab} onPress={() => setMenuVisible(true)}>
@@ -90,9 +91,10 @@ export default function CityDetailScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    backgroundColor: "white" 
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingHorizontal: 16, // Add some horizontal padding
   },
   centeredContainer: {
     flex: 1,
@@ -105,15 +107,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#666",
   },
-  errorContainer: { 
-    flex: 1, 
-    justifyContent: "center", 
-    alignItems: "center" 
+  errorContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
   },
-  errorText: { 
-    fontSize: 18, 
-    color: "red", 
-    marginBottom: 20 
+  errorText: {
+    fontSize: 18,
+    color: "red",
+    marginBottom: 20
   },
   header: {
     height: 220,
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
   mainContent: {
     flex: 1,
   },
-  
+
   fab: {
     position: "absolute",
     bottom: 25,
@@ -170,5 +172,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     elevation: 8,
     zIndex: 10,
+  },
+  titleContainer: {
+    marginTop: 16,
+    marginBottom: 20,
+  },
+  discoverText: {
+    fontSize: 40,
+    color: "black",
+    fontFamily: "PlayfairDisplay_700Bold",
+
+  },
+  cityTitleText: {
+    fontSize: 45,
+    fontWeight: "bold",
+    fontFamily: "PlayfairDisplay_700Bold",
   },
 });

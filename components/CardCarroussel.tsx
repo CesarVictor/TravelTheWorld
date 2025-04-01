@@ -7,70 +7,19 @@ import {
   Dimensions,
   FlatList,
   TouchableOpacity,
+  Image,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
 } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  interpolate,
-  Extrapolate,
-} from 'react-native-reanimated';
 import { City } from '@/Data/data';
 
 const { width } = Dimensions.get('window');
-const snapWidth = width;
 
 interface CardCarouselProps {
   cities: City[];
   onChangeIndex?: (index: number) => void;
   onSelectCity?: (cityName: string) => void;
 }
-
-interface CityCardProps {
-  city: City;
-  index: number;
-  scrollX: Animated.SharedValue<number>;
-  onPress: () => void;
-  paginationDots: React.ReactNode;
-}
-
-const CityCard: React.FC<CityCardProps> = ({
-  city,
-  index,
-  scrollX,
-  onPress,
-  paginationDots,
-}) => {
-  const animatedStyle = useAnimatedStyle(() => {
-    const scale = interpolate(
-      scrollX.value,
-      [(index - 1) * snapWidth, index * snapWidth, (index + 1) * snapWidth],
-      [1.05, 1, 1.05],
-      Extrapolate.CLAMP
-    );
-    return {
-      transform: [{ scale }],
-    };
-  });
-
-  return (
-    <View style={styles.cardPageWrapper}>
-      <View style={styles.cardWrapper}>
-        <View style={styles.card}>
-          {/* Only the image is animated */}
-          <Animated.View style={[styles.imageWrapper, animatedStyle]}>
-            <Animated.Image
-              source={{ uri: city.imageUrl }}
-              style={styles.cityImage}
-            />
-          </Animated.View>
-          <Text style={styles.cityName}>{city.name.toUpperCase()}</Text>
-          {/* Dots inside the card */}
-          <View style={styles.paginationContainer}>{paginationDots}</View>
-        </View>
-      </View>
-    </View>
-  );
-};
 
 const CardCarousel: React.FC<CardCarouselProps> = ({
   cities,
@@ -79,100 +28,100 @@ const CardCarousel: React.FC<CardCarouselProps> = ({
 }) => {
   const flatListRef = useRef<FlatList<City>>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const scrollX = useSharedValue(0);
 
-  const handleScroll = (event: any) => {
-    scrollX.value = event.nativeEvent.contentOffset.x;
-    const index = Math.round(event.nativeEvent.contentOffset.x / snapWidth);
-    if (index !== activeIndex) {
-      setActiveIndex(index);
-      onChangeIndex?.(index);
-    }
+  const handleScrollEnd = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const index = Math.round(event.nativeEvent.contentOffset.x / width);
+    setActiveIndex(index);
+    onChangeIndex?.(index);
   };
 
-  return (
-    <View>
-      <FlatList
-        ref={flatListRef}
-        data={cities}
-        renderItem={({ item, index }) => (
-          <CityCard
-            city={item}
-            index={index}
-            scrollX={scrollX}
-            onPress={() => onSelectCity?.(item.name)}
-            paginationDots={
-              <View style={styles.dotsRow}>
-                {cities.map((_, i) => (
-                  <View
-                    key={i}
-                    style={[styles.dot, i === activeIndex && styles.activeDot]}
-                  />
-                ))}
-              </View>
-            }
-          />
-        )}
-        keyExtractor={(item) => item.name}
-        horizontal
-        pagingEnabled
-        snapToInterval={snapWidth}
-        snapToAlignment="center"
-        decelerationRate="fast"
-        showsHorizontalScrollIndicator={false}
-        onMomentumScrollEnd={handleScroll}
-        onScroll={(event) => (scrollX.value = event.nativeEvent.contentOffset.x)}
-        scrollEventThrottle={16}
-        style={{ flexGrow: 0 }}
-      />
+  const renderImage = ({ item }: { item: City }) => (
+    <View style={styles.imageWrapper}>
+      <Image source={{ uri: item.imageUrl }} style={styles.cityImage} />
+    </View>
+  );
 
+  return (
+    <View style={styles.wrapper}>
+      {/* Card principale */}
+      <View style={styles.card}>
+        <View style={styles.flatListWrapper}>
+          <FlatList
+            ref={flatListRef}
+            data={cities}
+            renderItem={renderImage}
+            keyExtractor={(item) => item.name}
+            horizontal
+            pagingEnabled
+            onMomentumScrollEnd={handleScrollEnd}
+            showsHorizontalScrollIndicator={false}
+            snapToInterval={width}
+            snapToAlignment="center"
+            decelerationRate="fast"
+          />
+        </View>
+
+        <Text style={styles.cityName}>
+          {cities[activeIndex]?.name.toUpperCase()}
+        </Text>
+
+        <View style={styles.paginationContainer}>
+          <View style={styles.dotsRow}>
+            {cities.map((_, i) => (
+              <View
+                key={i}
+                style={[styles.dot, i === activeIndex && styles.activeDot]}
+              />
+            ))}
+          </View>
+        </View>
+      </View>
+
+      {/* Bouton en dessous */}
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => {
-          const selectedCity = cities[activeIndex];
-          if (selectedCity) {
-            onSelectCity?.(selectedCity.name);
-          }
-        }}
+        onPress={() => onSelectCity?.(cities[activeIndex]?.name)}
         style={styles.exploreBtnWrapper}
       >
         <BlurView intensity={50} tint="light" style={styles.exploreBtn}>
           <Text style={styles.exploreBtnText}>EXPLORE THE CITY</Text>
         </BlurView>
       </TouchableOpacity>
-
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  cardPageWrapper: {
-    width: width,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cardWrapper: {
-    width: width * 0.88,
-    alignItems: 'center',
+  wrapper: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    paddingTop: 0,
+    marginTop: 0,
+    backgroundColor: 'transparent',
   },
   card: {
+    width: width * 0.9,
     backgroundColor: '#fff',
-    borderRadius: 5,
-    padding: 15,
+    borderRadius: 10,
+    paddingVertical: 20,
+    paddingHorizontal: 10,
     alignItems: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 5,
-    width: '100%',
-    marginBottom: 20,
+    shadowOpacity: 0.15,
+    shadowRadius: 10,
+    elevation: 6,
+    alignSelf: 'center',
+  },
+  flatListWrapper: {
+    width: width * 0.86,
+    height: 390,
+    overflow: 'hidden',
+    borderRadius: 8,
+    marginBottom: 15,
   },
   imageWrapper: {
-    width: '100%',
+    width: width,
     height: 390,
-    borderRadius: 8,
-    overflow: 'hidden',
-    marginBottom: 15,
   },
   cityImage: {
     width: '100%',
@@ -185,31 +134,8 @@ const styles = StyleSheet.create({
     color: '#000',
     marginBottom: 10,
   },
-  exploreBtnWrapper: {
-    alignSelf: 'center',
-    marginBottom: 10,
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
-
-  exploreBtn: {
-    paddingVertical: 25,
-    paddingHorizontal: 100,
-    borderRadius: 10,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  exploreBtnText: {
-    fontWeight: '600',
-    fontSize: 16,
-    color: '#fff',
-    letterSpacing: 1,
-  },
-
   paginationContainer: {
-    marginTop: 10,
+    marginBottom: 5,
   },
   dotsRow: {
     flexDirection: 'row',
@@ -225,6 +151,26 @@ const styles = StyleSheet.create({
   },
   activeDot: {
     backgroundColor: '#000',
+  },
+  exploreBtnWrapper: {
+    marginTop: 20,
+    borderRadius: 8,
+    overflow: 'hidden',
+    alignSelf: 'center',
+  },
+  exploreBtn: {
+    paddingVertical: 20,
+    paddingHorizontal: 80,
+    borderRadius: 10,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  exploreBtnText: {
+    fontWeight: '600',
+    fontSize: 16,
+    color: '#fff',
+    letterSpacing: 1,
   },
 });
 

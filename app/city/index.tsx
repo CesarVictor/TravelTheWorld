@@ -3,6 +3,7 @@ import { View, StyleSheet, ImageBackground, Text, Dimensions } from "react-nativ
 import { useRouter } from "expo-router";
 import { City, DataService } from "@/Data/data";
 import CardCarousel from "@/components/CardCarroussel";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const { width, height } = Dimensions.get("window");
 
@@ -10,6 +11,7 @@ export default function CityScreen() {
   const router = useRouter();
   const [cities, setCities] = useState<City[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     const fetchCities = async () => {
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     flex: 1,
-    paddingTop: 80,
+    paddingTop: 100,
     paddingHorizontal: 20,
     alignItems: "center",
   },
@@ -70,6 +72,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     fontWeight: "600",
     marginBottom: 4,
+    
   },
   line: {
     height: 1,
@@ -81,6 +84,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "bold",
     textAlign: "left",
+    fontFamily: "PlayfairDisplay_700Bold",
   },
   green: {
     color: "#2F7E3E",
