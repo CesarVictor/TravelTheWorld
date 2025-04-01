@@ -12,9 +12,9 @@ type CategoryFilterProps = {
 export const CATEGORY_LABELS: Record<string, string> = {
   all: "Tout",
   restaurants: "Restaurants",
-  museums: "Musées",
-  historical_sites: "Sites historiques",
-  activities: "Activités",
+  museums: "Museums",
+  historical_sites: "Historical Sites",
+  activities: "Activities",
 };
 
 const CategoryFilter: React.FC<CategoryFilterProps> = ({ 

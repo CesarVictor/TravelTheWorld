@@ -27,12 +27,13 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
       const transformed: { [key: string]: { top: Place[]; nearby: Place[] } } = {};
 
       Object.entries(places).forEach(([category, placesArray]) => {
+        const sorted = [...placesArray].sort((a, b) => b.rating - a.rating);
         transformed[category] = {
-          top: placesArray.slice(0, 3), // top 3
-          nearby: placesArray.slice(3), // tous les autres
+          top: sorted.length > 1 ? [sorted[0]] : [],
+          nearby: sorted.slice(1),
         };
       });
-
+  
       setPlacesByCategory(transformed);
       setIsLoading(false);
     }
@@ -41,21 +42,23 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
   const categories = ['all', ...Object.keys(placesByCategory)];
   
   const categoryLabel = selectedCategory === "all" 
-    ? "lieux" 
+    ? "Activities" 
     : CATEGORY_LABELS[selectedCategory] || selectedCategory;
     
   const titleTop = `Top ${categoryLabel}`;
-  const titleNearby = `${categoryLabel} à proximité`;
+  const titleNearby = `Nearby ${categoryLabel.charAt(0).toUpperCase() + categoryLabel.slice(1)}`;
 
   const topPlacesToShow =
     selectedCategory === "all"
       ? Object.values(placesByCategory).flatMap((cat) => cat.top)
       : placesByCategory[selectedCategory]?.top || [];
-
+  console.log("Top places to show:", topPlacesToShow);
   const nearbyPlacesToShow =
     selectedCategory === "all"
       ? Object.values(placesByCategory).flatMap((cat) => cat.nearby)
       : placesByCategory[selectedCategory]?.nearby || [];
+    
+      console.log("Nearby places to show:", nearbyPlacesToShow);
 
   if (isLoading) {
     return (
@@ -82,17 +85,59 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
       <Text style={styles.sectionHeader}>{titleNearby}</Text>
     </View>
   );
+  const renderEmptyContent = () => {
+    // Si la catégorie sélectionnée n'a pas de lieux à proximité, 
+    // montrer des suggestions d'autres catégories
+    if (selectedCategory !== "all") {
+      // Trouver les catégories qui ont des lieux à proximité
+      const otherCategories = Object.entries(placesByCategory)
+        .filter(([category, { nearby }]) => 
+          category !== selectedCategory && nearby.length > 0);
+      
+      if (otherCategories.length === 0) {
+        return (
+          <View style={styles.emptyContainer}>
+            <Text style={styles.emptyText}>Aucun lieu disponible dans cette région</Text>
+          </View>
+        );
+      }
+      
+      return (
+        <View style={styles.suggestionsContainer}>
+          <Text style={styles.emptyText}>
+            Aucun lieu disponible dans cette catégorie
+          </Text>
+          <Text style={styles.suggestionsTitle}>Découvrez d'autres catégories :</Text>
+          
+          {otherCategories.map(([category, { nearby }]) => (
+            <View key={category} style={styles.suggestionSection}>
+              <Text style={styles.suggestionHeader}>
+                {CATEGORY_LABELS[category] || category}
+              </Text>
+              {nearby.slice(0, 2).map(place => (
+                <View key={place.id} style={styles.itemWrapper}>
+                  <Section places={[place]} title={""} />
+                </View>
+              ))}
+            </View>
+          ))}
+        </View>
+      );
+    }
+    
+    return (
+      <View style={styles.emptyContainer}>
+        <Text style={styles.emptyText}>Aucun lieu disponible à proximité</Text>
+      </View>
+    );
+  };
 
   return (
     <FlatList
       data={nearbyPlacesToShow}
       keyExtractor={(item) => item.id.toString()}
       horizontal={false}
-      ListEmptyComponent={
-        <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>Aucun lieu disponible dans cette catégorie</Text>
-        </View>
-      }
+      ListEmptyComponent={renderEmptyContent}
       ListHeaderComponent={renderContent}
       renderItem={({ item }) => (
         <View style={styles.itemWrapper}>
@@ -127,6 +172,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#888',
     textAlign: 'center'
+  },
+  suggestionsContainer: {
+    padding: 16,
+  },
+  suggestionsTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginTop: 20,
+    marginBottom: 12,
+    color: '#333'
+  },
+  suggestionSection: {
+    marginBottom: 24,
+  },
+  suggestionHeader: {
+    fontSize: 16,
+    fontWeight: "600",
+    marginVertical: 8,
+    marginLeft: 8,
+    color: '#555'
   }
 });
 
