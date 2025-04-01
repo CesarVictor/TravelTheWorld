@@ -7,6 +7,7 @@ import {
     Image,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import { useRouter } from 'expo-router';
 
 interface BottomDockMenuProps {
     onChangeCity?: () => void;
@@ -14,6 +15,12 @@ interface BottomDockMenuProps {
 }
 
 const BottomDockMenu: React.FC<BottomDockMenuProps> = ({ onChangeCity, onClose }) => {
+    const router = useRouter();
+
+    const navigateToNotifications = () => {
+        router.push('/notifications');
+    };
+
     return (
         <View style={styles.container}>
             {/* Top Row with Icons */}
@@ -25,6 +32,13 @@ const BottomDockMenu: React.FC<BottomDockMenuProps> = ({ onChangeCity, onClose }
                 <TouchableOpacity style={styles.iconWrapper}>
                     <Icon name="check-circle" size={22} color="white" />
                     <Text style={styles.iconLabel}>DO's</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.iconWrapper}
+                    onPress={navigateToNotifications}
+                >
+                    <Icon name="bell" size={22} color="white" />
+                    <Text style={styles.iconLabel}>NOTIFS</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.iconWrapper}>
                     <Icon name="award" size={22} color="white" />
@@ -96,8 +110,9 @@ const styles = StyleSheet.create({
     },
     changeCityText: {
         color: 'white',
-        textDecorationLine: 'underline',
         fontSize: 13,
+        alignItems: 'center',
+        textAlign: 'center',
     },
     closeText: {
         color: 'white',

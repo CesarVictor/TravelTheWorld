@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    paddingHorizontal: 16, // Add some horizontal padding
   },
   centeredContainer: {
     flex: 1,
