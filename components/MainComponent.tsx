@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, FlatList, StyleSheet, ActivityIndicator, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 import DataService, { Place, Places } from "@/Data/data";
 import Section from "./Section";
 import CategoryFilter from "./categoryFilter";
@@ -7,8 +8,6 @@ import TopCard from "./TopCard";
 import SectionSkeleton from "./skeleton/SectionSkeleton";
 import CategoryFilterSkeleton from "./skeleton/CategoryFilterSkeleton";
 import TopCardSkeleton from "./skeleton/TopCardSkeleton";
-
-// Importer CATEGORY_LABELS depuis categoryFilter plutôt que de le redéfinir
 import { CATEGORY_LABELS } from "./categoryFilter";
 
 interface MainComponentProps {
@@ -17,6 +16,7 @@ interface MainComponentProps {
 }
 
 const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [placesByCategory, setPlacesByCategory] = useState<{ [key: string]: { top: Place[]; nearby: Place[] } }>({});
   const [isLoading, setIsLoading] = useState(true);
@@ -33,18 +33,18 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
           nearby: sorted.slice(1),
         };
       });
-  
+
       setPlacesByCategory(transformed);
       setIsLoading(false);
     }
   }, [places, loading]);
 
   const categories = ['all', ...Object.keys(placesByCategory)];
-  
-  const categoryLabel = selectedCategory === "all" 
-    ? "Activities" 
+
+  const categoryLabel = selectedCategory === "all"
+    ? "Activities"
     : CATEGORY_LABELS[selectedCategory] || selectedCategory;
-    
+
   const titleTop = `Top ${categoryLabel}`;
   const titleNearby = `Nearby ${categoryLabel.charAt(0).toUpperCase() + categoryLabel.slice(1)}`;
 
@@ -52,13 +52,16 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
     selectedCategory === "all"
       ? Object.values(placesByCategory).flatMap((cat) => cat.top)
       : placesByCategory[selectedCategory]?.top || [];
-  console.log("Top places to show:", topPlacesToShow);
+
   const nearbyPlacesToShow =
     selectedCategory === "all"
       ? Object.values(placesByCategory).flatMap((cat) => cat.nearby)
       : placesByCategory[selectedCategory]?.nearby || [];
-    
-      console.log("Nearby places to show:", nearbyPlacesToShow);
+
+  // Fonction pour naviguer vers la page de détail
+  const handlePlacePress = (placeId: number) => {
+    router.push(`/place/${placeId}`);
+  };
 
   if (isLoading) {
     return (
@@ -80,20 +83,23 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
       />
 
       <Text style={styles.sectionHeader}>{titleTop}</Text>
-      <TopCard places={topPlacesToShow} />
+      <TopCard
+        places={topPlacesToShow}
+      />
 
       <Text style={styles.sectionHeader}>{titleNearby}</Text>
     </View>
   );
+
   const renderEmptyContent = () => {
     // Si la catégorie sélectionnée n'a pas de lieux à proximité, 
     // montrer des suggestions d'autres catégories
     if (selectedCategory !== "all") {
       // Trouver les catégories qui ont des lieux à proximité
       const otherCategories = Object.entries(placesByCategory)
-        .filter(([category, { nearby }]) => 
+        .filter(([category, { nearby }]) =>
           category !== selectedCategory && nearby.length > 0);
-      
+
       if (otherCategories.length === 0) {
         return (
           <View style={styles.emptyContainer}>
@@ -101,14 +107,14 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
           </View>
         );
       }
-      
+
       return (
         <View style={styles.suggestionsContainer}>
           <Text style={styles.emptyText}>
             Aucun lieu disponible dans cette catégorie
           </Text>
           <Text style={styles.suggestionsTitle}>Découvrez d'autres catégories :</Text>
-          
+
           {otherCategories.map(([category, { nearby }]) => (
             <View key={category} style={styles.suggestionSection}>
               <Text style={styles.suggestionHeader}>
@@ -116,7 +122,10 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
               </Text>
               {nearby.slice(0, 2).map(place => (
                 <View key={place.id} style={styles.itemWrapper}>
-                  <Section places={[place]} title={""} />
+                  <Section
+                    places={[place]}
+                    title={""}
+                  />
                 </View>
               ))}
             </View>
@@ -124,7 +133,7 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
         </View>
       );
     }
-    
+
     return (
       <View style={styles.emptyContainer}>
         <Text style={styles.emptyText}>Aucun lieu disponible à proximité</Text>
@@ -141,7 +150,10 @@ const MainComponent: React.FC<MainComponentProps> = ({ places, loading }) => {
       ListHeaderComponent={renderContent}
       renderItem={({ item }) => (
         <View style={styles.itemWrapper}>
-          <Section places={[item]} title={""} />
+          <Section
+            places={[item]}
+            title={""}
+          />
         </View>
       )}
     />

@@ -16,21 +16,18 @@ const Section: React.FC<SectionProps> = ({ title, places }) => {
   return (
     <View style={styles.sectionContainer}>
       {title && <Text style={styles.sectionTitle}>{title}</Text>}
-      
+
       {places.map(place => (
-        <TouchableOpacity 
-          key={place.id.toString()} 
+        <TouchableOpacity
+          key={place.id.toString()}
           style={styles.placeItem}
           activeOpacity={0.8}
-          onPress={() => {
-            // Navigation vers détail quand il sera disponible
-            // router.push(`/place/${place.id}`);
-          }}
+          onPress={() => router.push(`/place/${place.id}`)}
         >
           <View style={styles.imageContainer}>
-            <Image 
-              source={{ uri: place.imageUrl }} 
-              style={styles.placeImage} 
+            <Image
+              source={{ uri: place.imageUrl }}
+              style={styles.placeImage}
             />
             <LinearGradient
               colors={['transparent', 'rgba(0,0,0,0.3)']}
@@ -41,7 +38,7 @@ const Section: React.FC<SectionProps> = ({ title, places }) => {
               <Text style={styles.ratingText}>{place.rating}</Text>
             </View>
           </View>
-          
+
           <View style={styles.contentContainer}>
             <Text style={styles.placeName} numberOfLines={1}>
               {place.name}
@@ -50,7 +47,7 @@ const Section: React.FC<SectionProps> = ({ title, places }) => {
               {place.description}
             </Text>
           </View>
-          
+
           <View style={styles.arrowContainer}>
             <Feather name="chevron-right" size={18} color="#888" />
           </View>

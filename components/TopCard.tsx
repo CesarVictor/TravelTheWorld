@@ -34,13 +34,10 @@ const TopCard: React.FC<TopCardProps> = ({ places }) => {
       snapToInterval={CARD_WIDTH + 12}
       snapToAlignment="start"
       renderItem={({ item }) => (
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.cardWrapper}
           activeOpacity={0.9}
-          onPress={() => {
-            // Naviguer vers la page de détail quand elle sera créée
-            // router.push(`/place/${item.id}`);
-          }}
+          onPress={() => router.push(`/place/${item.id}`)}
         >
           <ImageBackground
             source={{ uri: item.imageUrl }}
@@ -51,7 +48,7 @@ const TopCard: React.FC<TopCardProps> = ({ places }) => {
               colors={['transparent', 'rgba(0,0,0,0.7)']}
               style={styles.gradient}
             />
-            
+
             <View style={styles.badge}>
               <Text style={styles.badgeText}>Top</Text>
             </View>
@@ -75,7 +72,7 @@ const TopCard: React.FC<TopCardProps> = ({ places }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     paddingLeft: 16,
     paddingRight: 4,
     paddingBottom: 8,

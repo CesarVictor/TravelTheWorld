@@ -57,6 +57,19 @@ export default function RootLayout() {
             title: 'Découvrir',
           }}
         />
+        <Stack.Screen
+          name="notifications"
+          options={{
+            title: 'Notifications',
+          }}
+        />
+        <Stack.Screen
+          name="place/[id]"
+          options={{
+            title: 'Détail du lieu',
+            animation: 'slide_from_bottom',
+          }}
+        />
       </Stack>
     </>
   );
