@@ -180,11 +180,12 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "black",
     fontFamily: "PlayfairDisplay_700Bold",
-
+    paddingLeft: 10,
   },
   cityTitleText: {
     fontSize: 45,
     fontWeight: "bold",
     fontFamily: "PlayfairDisplay_700Bold",
+    paddingLeft: 10,
   },
 });
